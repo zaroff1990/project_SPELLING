@@ -41,6 +41,7 @@ public class ClickDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         isDragging = true;
         canvasGroup.blocksRaycasts = false;
         GameManager.instance.heldLetter = this.rectTransform;
+        this.transform.SetAsLastSibling();
         StopCoroutine(MouseDelay());
     }
 

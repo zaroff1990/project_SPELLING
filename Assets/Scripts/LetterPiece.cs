@@ -33,29 +33,46 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
         rectTransform2 = GameManager.instance.heldLetter;
         if (rectTransform2 == null || rectTransform2 == rectTransform1)
         {
-            letter.GetComponent<Animator>().enabled = false;
+            if (letter.GetComponent<Animator>().enabled)
+            {
+                letter.GetComponent<TextMeshProUGUI>().color = Color.white;
+                letter.GetComponent<Animator>().enabled = false;
+            }
             return;
         }
         if (RectOverlaps(rectTransform1, rectTransform2))
         {
             if (Input.GetMouseButtonUp(0))
             {
-                heldLetter = letter.GetComponent<TextMeshProUGUI>().text;
-                letter.GetComponent<TextMeshProUGUI>().text = rectTransform2.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-                letter.GetComponent<TextMeshProUGUI>().color = Color.yellow;
-                rectTransform2.gameObject.GetComponent<ClickDrag>().StopCoroutine(rectTransform2.gameObject.GetComponent<ClickDrag>().MouseDelay());
-                GameManager.instance.heldLetter = null;
-                heldObj = rectTransform2.gameObject;
-                rectTransform2.gameObject.SetActive(false);
-                GameManager.instance.LetterChanged();
+                if (answerSpace)
+                {
+                    heldLetter = letter.GetComponent<TextMeshProUGUI>().text;
+                    letter.GetComponent<TextMeshProUGUI>().text = rectTransform2.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+                    letter.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+                    rectTransform2.gameObject.GetComponent<ClickDrag>().StopCoroutine(rectTransform2.gameObject.GetComponent<ClickDrag>().MouseDelay());
+                    GameManager.instance.heldLetter = null;
+                    heldObj = rectTransform2.gameObject;
+                    rectTransform2.gameObject.SetActive(false);
+                    GameManager.instance.LetterChanged();
+                }
+                else
+                {
+                    rectTransform2.gameObject.GetComponent<ClickDrag>().isDragging = false;
+                    rectTransform2.gameObject.GetComponent<ClickDrag>().canvasGroup.blocksRaycasts = true;
+                    GameManager.instance.heldLetter = null;
+                    rectTransform2.anchoredPosition = rectTransform2.gameObject.GetComponent<LetterPiece>().startingPos;
+                }
             }
-            if (!letter.GetComponent<Animator>().enabled)letter.GetComponent<Animator>().enabled = true;
+            if (!letter.GetComponent<Animator>().enabled && answerSpace)letter.GetComponent<Animator>().enabled = true;
         }
         
         else
         {
-            letter.GetComponent<Animator>().enabled = false;
-
+            if (letter.GetComponent<Animator>().enabled)
+            {
+                letter.GetComponent<TextMeshProUGUI>().color = Color.white;
+                letter.GetComponent<Animator>().enabled = false;
+            }
         }
     }
 
