@@ -31,6 +31,10 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
     private void Update()
     {
         rectTransform2 = GameManager.instance.heldLetter;
+        if (heldLetter != null && letter.GetComponent<TextMeshProUGUI>().color == Color.white)
+        {
+            letter.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+        }
         if (rectTransform2 == null || rectTransform2 == rectTransform1)
         {
             if (letter.GetComponent<Animator>().enabled)

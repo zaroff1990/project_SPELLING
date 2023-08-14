@@ -32,9 +32,23 @@ public class GameManager : MonoBehaviour
 
     public string[] trail;
     public string[] trail_mix;
+    public AudioClip[] trail_audio;
     public int currentLevel = 0;
 
     public bool gamePause = false;
+
+    public AudioSource sndBG;
+    public AudioSource sndFX;
+    public AudioSource sndVA;
+
+    public AudioClip bgMain;
+    public AudioClip sfxLetterPick;
+    public AudioClip sfxLetterPlace;
+    public AudioClip sfxChoiceRight;
+    public AudioClip sfxChoiceWrong;
+
+    public Animator animDog;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             trail = this.GetComponent<WordTrails>().trailA;
             trail_mix = this.GetComponent<WordTrails>().trailA_mix;
+            trail_audio = this.GetComponent<WordTrails>().trailA_voice;
         }
 
         StartWord();
@@ -110,6 +125,8 @@ public class GameManager : MonoBehaviour
     {
         if (word == answerWord)
         {
+            PlayAudio(sndFX, sfxChoiceRight);
+            animDog.Play("correct");
             gamePause = true;
             yield return new WaitForSeconds(1f);
             if (currentLevel < trail.Length - 1)
@@ -118,5 +135,22 @@ public class GameManager : MonoBehaviour
                 StartWord();
             }
         }
+        else
+        {
+            PlayAudio(sndFX, sfxChoiceWrong);
+            animDog.Play("wrong");
+        }
+    }
+
+    public void PlayAudio(AudioSource player, AudioClip snd)
+    {
+        player.clip = snd;
+        player.Play();
+    }
+
+    public void PlayVoice()
+    {
+        PlayAudio(sndVA, trail_audio[currentLevel + 1]);
+        animDog.Play("hint");
     }
 }

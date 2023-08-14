@@ -42,6 +42,7 @@ public class ClickDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         canvasGroup.blocksRaycasts = false;
         GameManager.instance.heldLetter = this.rectTransform;
         this.transform.SetAsLastSibling();
+        GameManager.instance.PlayAudio(GameManager.instance.sndFX, GameManager.instance.sfxLetterPick);
         StopCoroutine(MouseDelay());
     }
 
@@ -65,5 +66,6 @@ public class ClickDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         isDragging = false;
         canvasGroup.blocksRaycasts = true;
         GameManager.instance.heldLetter = null;
+        GameManager.instance.PlayAudio(GameManager.instance.sndFX, GameManager.instance.sfxLetterPlace);
     }
 }

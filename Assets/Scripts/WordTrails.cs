@@ -7,5 +7,6 @@ public class WordTrails : MonoBehaviour
     public string[] alphabet;
     public string[] trailA;
     public string[] trailA_mix;
+    public AudioClip[] trailA_voice;
 
 }
