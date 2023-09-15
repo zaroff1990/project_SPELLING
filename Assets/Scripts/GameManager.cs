@@ -31,8 +31,7 @@ public class GameManager : MonoBehaviour
     private GameMode selectedOption;
 
     public string[] trail;
-    public string[] trail_mix;
-    public AudioClip[] trail_audio;
+    public AudioClip trail_audio;
     public int currentLevel = 0;
 
     public bool gamePause = false;
@@ -54,13 +53,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        if (selectedOption == GameMode.Debug)
-        {
-            trail = this.GetComponent<WordTrails>().trailA;
-            trail_mix = this.GetComponent<WordTrails>().trailA_mix;
-            trail_audio = this.GetComponent<WordTrails>().trailA_voice;
-        }
-
         StartWord();
     }
 
@@ -68,8 +60,9 @@ public class GameManager : MonoBehaviour
     {
         gamePause = false;
         currentWord = trail[currentLevel];
-        currentMix = trail_mix[currentLevel + 1];
         answerWord = trail[currentLevel + 1];
+        trail_audio = Resources.Load<AudioClip>("voice_hailey_" + answerWord);
+        currentMix = FindDifferentCharacters(currentWord, answerWord);
 
         LetterPiece[] objectsWithMyScript = FindObjectsOfType<LetterPiece>();
         foreach (LetterPiece script in objectsWithMyScript)
@@ -84,6 +77,7 @@ public class GameManager : MonoBehaviour
             tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentWord[i].ToString();
             tmp.transform.GetComponent<ClickDrag>().enabled = false;
             tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
+            tmp.transform.GetChild(1).gameObject.SetActive(true);
         }
 
         if (selectedOption == GameMode.Debug)
@@ -107,7 +101,7 @@ public class GameManager : MonoBehaviour
             mixSpace[i].GetComponent<ClickDrag>().enabled = true;
             mixSpace[i].SetActive(true);
         }
-
+        PlayVoice();
     }
 
     public void LetterChanged()
@@ -117,7 +111,7 @@ public class GameManager : MonoBehaviour
         {
             ans += workSpace.transform.GetChild(i).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
         }
-        StartCoroutine(CheckAnswer(ans));
+        StartCoroutine(CheckAnswer(ans.Trim()));
     }
 
 
@@ -150,7 +144,57 @@ public class GameManager : MonoBehaviour
 
     public void PlayVoice()
     {
-        PlayAudio(sndVA, trail_audio[currentLevel + 1]);
+        PlayAudio(sndVA, trail_audio);
         animDog.Play("hint");
     }
+
+    static string FindDifferentCharacters(string str1, string str2)
+    {
+        Dictionary<char, int> freq1 = new Dictionary<char, int>();
+        Dictionary<char, int> freq2 = new Dictionary<char, int>();
+
+        foreach (char c in str1)
+        {
+            if (freq1.ContainsKey(c))
+            {
+                freq1[c]++;
+            }
+            else
+            {
+                freq1[c] = 1;
+            }
+        }
+
+        foreach (char c in str2)
+        {
+            if (freq2.ContainsKey(c))
+            {
+                freq2[c]++;
+            }
+            else
+            {
+                freq2[c] = 1;
+            }
+        }
+
+        string differentChars = "";
+
+        foreach (var pair in freq2)
+        {
+            char c = pair.Key;
+            int count = pair.Value;
+
+            if (!freq1.ContainsKey(c))
+            {
+                differentChars += new string(c, count);
+            }
+            else if (freq1[c] < count)
+            {
+                differentChars += new string(c, count - freq1[c]);
+            }
+        }
+
+        return differentChars;
+    }
+
 }

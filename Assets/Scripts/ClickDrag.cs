@@ -46,9 +46,22 @@ public class ClickDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         StopCoroutine(MouseDelay());
     }
 
+    public void ForceClick()
+    {
+        isDragging = true;
+        canvasGroup.blocksRaycasts = false;
+        GameManager.instance.heldLetter = this.rectTransform;
+        this.transform.SetAsLastSibling();
+        GameManager.instance.PlayAudio(GameManager.instance.sndFX, GameManager.instance.sfxLetterPick);
+        StopCoroutine(MouseDelay());
+    }
+
     public void OnPointerUp(PointerEventData eventData)
     {
-        StartCoroutine(MouseDelay());
+        if (isDragging)
+        {
+            StartCoroutine(MouseDelay());
+        }
     }
 
     private void MoveUIWithMouse()
@@ -67,5 +80,6 @@ public class ClickDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         canvasGroup.blocksRaycasts = true;
         GameManager.instance.heldLetter = null;
         GameManager.instance.PlayAudio(GameManager.instance.sndFX, GameManager.instance.sfxLetterPlace);
+        GameManager.instance.LetterChanged();
     }
 }

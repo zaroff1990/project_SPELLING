@@ -16,6 +16,7 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
     public GameObject prefabLetter;
 
     public bool answerSpace = false;
+    public bool spareLetter = false;
 
     public Vector2 startingPos;
 
@@ -31,6 +32,8 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
     private void Update()
     {
         rectTransform2 = GameManager.instance.heldLetter;
+
+
         if (heldLetter != null && letter.GetComponent<TextMeshProUGUI>().color == Color.white)
         {
             letter.GetComponent<TextMeshProUGUI>().color = Color.yellow;
@@ -68,8 +71,7 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
                 }
             }
             if (!letter.GetComponent<Animator>().enabled && answerSpace)letter.GetComponent<Animator>().enabled = true;
-        }
-        
+        }       
         else
         {
             if (letter.GetComponent<Animator>().enabled)
@@ -107,18 +109,42 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (heldLetter != null)
+        if (letter.GetComponent<TextMeshProUGUI>().text != " ")
         {
-            letter.GetComponent<TextMeshProUGUI>().text = heldLetter;
-            letter.GetComponent<TextMeshProUGUI>().color = Color.white;
-            heldObj.SetActive(true);
-            heldLetter = null;
+            if (heldLetter != null)
+            {
+                letter.GetComponent<TextMeshProUGUI>().text = heldLetter;
+                letter.GetComponent<TextMeshProUGUI>().color = Color.white;
+                heldObj.SetActive(true);
+                heldLetter = null;
+                return;
+            }
+            if (heldLetter == null && answerSpace == true)
+            {
+                GameObject tmp = Instantiate(this.gameObject);
+                tmp.transform.SetParent(this.transform.parent);
+                tmp.transform.position = this.transform.position;
+                tmp.transform.SetParent(this.transform.parent.parent);
+                tmp.gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+                tmp.gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+                tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = letter.GetComponent<TextMeshProUGUI>().text;
+                tmp.transform.GetComponent<ClickDrag>().enabled = true;
+                tmp.transform.GetComponent<LetterPiece>().answerSpace = false;
+                tmp.transform.GetComponent<LetterPiece>().spareLetter = true;
+                tmp.transform.GetChild(1).gameObject.SetActive(false);
+                tmp.transform.GetComponent<ClickDrag>().ForceClick();
+
+                letter.GetComponent<TextMeshProUGUI>().text = " ";
+                letter.GetComponent<TextMeshProUGUI>().color = Color.white;
+
+                return;
+            }
         }
     }
 
     public void KillPiece()
     {
-        if (answerSpace)
+        if (answerSpace || spareLetter)
         {
             Destroy(this.gameObject);
         }
