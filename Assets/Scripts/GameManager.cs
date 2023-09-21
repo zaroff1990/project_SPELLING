@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -46,7 +47,11 @@ public class GameManager : MonoBehaviour
     public AudioClip sfxChoiceRight;
     public AudioClip sfxChoiceWrong;
 
-    public Animator animDog;
+    public VideoPlayer animDog;
+    public string vidIdle = "https://zaroffmars.com/wp-content/uploads/spell2/idle.mp4";
+    public string vidHappy = "https://zaroffmars.com/wp-content/uploads/spell2/happy.mp4";
+    public string vidSad = "https://zaroffmars.com/wp-content/uploads/spell2/sad.mp4";
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +68,9 @@ public class GameManager : MonoBehaviour
         answerWord = trail[currentLevel + 1];
         trail_audio = Resources.Load<AudioClip>("voice_hailey_" + answerWord);
         currentMix = FindDifferentCharacters(currentWord, answerWord);
-
+        animDog.url = vidIdle;
+        animDog.isLooping = true;
+        animDog.Play();
         LetterPiece[] objectsWithMyScript = FindObjectsOfType<LetterPiece>();
         foreach (LetterPiece script in objectsWithMyScript)
         {
@@ -120,7 +127,10 @@ public class GameManager : MonoBehaviour
         if (word == answerWord)
         {
             PlayAudio(sndFX, sfxChoiceRight);
-            animDog.Play("correct");
+            animDog.url = vidHappy;
+            animDog.isLooping = false;
+            animDog.Play();
+            StartCoroutine(timeVideo(1f));
             gamePause = true;
             yield return new WaitForSeconds(1f);
             if (currentLevel < trail.Length - 1)
@@ -132,7 +142,10 @@ public class GameManager : MonoBehaviour
         else
         {
             PlayAudio(sndFX, sfxChoiceWrong);
-            animDog.Play("wrong");
+            animDog.url = vidSad;
+            animDog.isLooping = false;
+            animDog.Play();
+            StartCoroutine(timeVideo(3f));
         }
     }
 
@@ -145,9 +158,14 @@ public class GameManager : MonoBehaviour
     public void PlayVoice()
     {
         PlayAudio(sndVA, trail_audio);
-        animDog.Play("hint");
     }
-
+    public IEnumerator timeVideo(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        animDog.url = vidIdle;
+        animDog.isLooping = true;
+        animDog.Play();
+    }
     static string FindDifferentCharacters(string str1, string str2)
     {
         Dictionary<char, int> freq1 = new Dictionary<char, int>();
