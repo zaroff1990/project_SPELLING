@@ -83,7 +83,7 @@ namespace SIS
         PlayfabSteam = 2,
 
         [Description("OCULUS_IAP")]
-        OculusRift = 3,
+        Oculus = 3,
 
         [Description("STEAM_IAP")]
         Steam = 4
@@ -100,6 +100,19 @@ namespace SIS
 
         [Description("PLAYFAB_PAYPAL")]
         PlayfabPaypal = 1
+    }
+
+
+    /// <summary>
+    /// Plugin selector for the store implementation on Android.
+    /// </summary>
+    public enum AndroidPlugin
+    {
+        [Description("")]
+        UnityIAP = 0,
+
+        [Description("OCULUS_IAP")]
+        Oculus = 1
     }
 
 

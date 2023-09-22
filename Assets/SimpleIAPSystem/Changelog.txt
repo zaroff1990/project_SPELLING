@@ -1,6 +1,13 @@
 **************************************
 CHANGELOG
 **************************************
+v5.2.7
+- VR package and scene was fully reworked and simplified, now making use of XR Interaction Toolkit for tracking
+  of headset and controllers. Compatibility includes any device supporting the XR Plugin, tested on Meta Quest 2
+- added VR sample scene setup documentation and updated Oculus Store guide on online documentation pages
+- Oculus Integration compatibility updated to 55.0+
+- Unity IAP compatibility updated to 4.9.4+
+
 v5.2.6
 - added support for Anti-Cheat Toolkit (third party asset) for encryption of PlayerPrefs and persistentDataPath
 - added separate integration guide for enabling Anti-Cheat Toolkit to the online documentation pages

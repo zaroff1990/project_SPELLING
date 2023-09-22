@@ -98,7 +98,7 @@ namespace SIS
             }
 
             string postData = GetPostData(product);
-            using (UnityWebRequest www = UnityWebRequest.Post(GetUrl("order", product.type), string.Empty))
+            using (UnityWebRequest www = UnityWebRequest.PostWwwForm(GetUrl("order", product.type), string.Empty))
             {
                 UploadHandlerRaw uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(postData));
                 uploadHandler.contentType = "application/json";
@@ -182,7 +182,7 @@ namespace SIS
 
             UnityWebRequest www = product.type == ProductType.Subscription ?
                 UnityWebRequest.Get(GetUrl("capture", product.type)) :
-                UnityWebRequest.Post(GetUrl("capture", product.type), string.Empty);
+                UnityWebRequest.PostWwwForm(GetUrl("capture", product.type), string.Empty);
             
             using (www)
             {

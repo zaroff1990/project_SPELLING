@@ -44,6 +44,7 @@ namespace SIS
 
         private DesktopPlugin desktopPlugin = DesktopPlugin.UnityIAP;
         private WebPlugin webPlugin = WebPlugin.UnityIAP;
+        private AndroidPlugin androidPlugin = AndroidPlugin.UnityIAP;
 
         private string packagesPath;
         private enum ExtensionPackages
@@ -205,6 +206,7 @@ namespace SIS
                 EditorGUILayout.LabelField("Custom Stores", EditorStyles.boldLabel);
                 desktopPlugin = (DesktopPlugin)EditorGUILayout.EnumPopup("Standalone:", desktopPlugin);
                 webPlugin = (WebPlugin)EditorGUILayout.EnumPopup("WebGL:", webPlugin);
+                androidPlugin = (AndroidPlugin)EditorGUILayout.EnumPopup("Android:", androidPlugin);
 
                 EditorGUILayout.EndVertical();
                 GUI.enabled = true;
@@ -428,9 +430,9 @@ namespace SIS
 
                 GUILayout.BeginHorizontal();
                 GUI.color = Color.yellow;
-                if (GUILayout.Button("Donate", GUILayout.Width(IAPSettingsStyles.buttonWidth)))
+                if (GUILayout.Button("GitHub Access & Donation", GUILayout.Width(IAPSettingsStyles.buttonWidth)))
                 {
-                    Help.BrowseURL("https://flobuk.com");
+                    Help.BrowseURL("https://flobuk.com/#github");
                 }
                 if (GUILayout.Button("Review Asset", GUILayout.Width(IAPSettingsStyles.buttonWidth)))
                 {
@@ -462,6 +464,7 @@ namespace SIS
 
             desktopPlugin = (DesktopPlugin)FindScriptingDefineIndex(BuildTargetGroup.Standalone);
             webPlugin = (WebPlugin)FindScriptingDefineIndex(BuildTargetGroup.WebGL);
+            androidPlugin = (AndroidPlugin)FindScriptingDefineIndex(BuildTargetGroup.Android);
 
             //check Unity IAP
             isPackageImported = false;
@@ -486,6 +489,9 @@ namespace SIS
                     break;
                 case BuildTargetGroup.WebGL:
                     defines = EnumHelper.GetEnumDescriptions(webPlugin);
+                    break;
+                case BuildTargetGroup.Android:
+                    defines = EnumHelper.GetEnumDescriptions(androidPlugin);
                     break;
                 case BuildTargetGroup.Unknown:
                     str = PlayerSettings.GetScriptingDefineSymbolsForGroup(activeGroup);
@@ -522,6 +528,7 @@ namespace SIS
 
             SetScriptingDefine(BuildTargetGroup.Standalone, EnumHelper.GetEnumDescriptions(desktopPlugin), (int)desktopPlugin);
             SetScriptingDefine(BuildTargetGroup.WebGL, EnumHelper.GetEnumDescriptions(webPlugin), (int)webPlugin);
+            SetScriptingDefine(BuildTargetGroup.Android, EnumHelper.GetEnumDescriptions(androidPlugin), (int)androidPlugin);
         }
 
 

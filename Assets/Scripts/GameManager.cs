@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,12 +53,14 @@ public class GameManager : MonoBehaviour
     public string vidHappy = "https://zaroffmars.com/wp-content/uploads/spell2/happy.mp4";
     public string vidSad = "https://zaroffmars.com/wp-content/uploads/spell2/sad.mp4";
 
+    public static string isSubbed;
+    public static DateTime subEnds = DateTime.Now;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
+        isSubbed = PlayerPrefs.GetString("isSubscribed", "no");
         StartWord();
     }
 
@@ -91,12 +94,12 @@ public class GameManager : MonoBehaviour
         {
             diff = 5;
         }
-        int rnd = Random.Range(0, diff-1);
-        for (int i =0; i<= mixSpace.Length - 1; i++)
+        int rnd = UnityEngine.Random.Range(0, diff - 1);
+        for (int i = 0; i <= mixSpace.Length - 1; i++)
         {
             mixSpace[i].SetActive(false);
         }
-        for (int i =0; i <= diff-1; i++)
+        for (int i = 0; i <= diff - 1; i++)
         {
             if (i == rnd) { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentMix; }
             else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = this.GetComponent<WordTrails>().alphabet[UnityEngine.Random.Range(0, this.GetComponent<WordTrails>().alphabet.Length - 1)]; }

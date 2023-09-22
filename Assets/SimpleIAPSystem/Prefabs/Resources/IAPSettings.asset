@@ -75,7 +75,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 0
+      rid: 0
     type: 1
     title: bundle
     description: example for a product bundle.
@@ -85,38 +85,38 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $4.99
     rewardList:
     - type: 1
       currency:
-        id: 2
+        rid: 2
       product:
-        id: 1
+        rid: -2
       amount: 1000
       realPrice: 
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 3
+        rid: 3
       amount: 1
       realPrice: 
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 4
+        rid: 4
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: c2c7e2c7-0304-45e4-9832-06eb199de3f3
     ID: coins_small
     storeIDs:
@@ -133,7 +133,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 5
+      rid: 5
     type: 0
     title: coins
     description: 1000 coins for virtual purchases.
@@ -143,24 +143,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $1.99
     rewardList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 1000
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: a43d7626-2803-4f77-8abb-d779fa21a306
     ID: coin_pack
     storeIDs:
@@ -171,7 +171,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 5
+      rid: 5
     type: 0
     title: coin pack
     description: 2500 coins for virtual purchases.
@@ -181,24 +181,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $3.99
     rewardList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 2500
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 5f3e468b-59a1-4601-972a-31892e27ab15
     ID: big_coin_pack
     storeIDs:
@@ -209,7 +209,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 5
+      rid: 5
     type: 0
     title: big coin pack
     description: 6000 coins for virtual purchases.
@@ -219,24 +219,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $7.99
     rewardList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 6000
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
     ID: no_ads
     storeIDs:
@@ -247,7 +247,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 5
+      rid: 5
     type: 1
     title: no ads
     description: example for a permanent product.
@@ -257,24 +257,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $2.49
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 7
+        rid: 7
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: a832c1c4-cadc-426b-8e4e-cda32d42434b
     ID: abo_monthly
     storeIDs:
@@ -288,7 +288,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 5
+      rid: 5
     type: 2
     title: subscription 1
     description: example for a subscription product.
@@ -298,24 +298,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $0.99
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 8
+        rid: 8
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 0f42277a-14da-4897-a0be-07fd028e8f3a
     ID: health
     storeIDs: []
@@ -323,7 +323,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 9
+      rid: 9
     type: 0
     title: health
     description: example for a consumable product.
@@ -333,9 +333,9 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 250
       realPrice: 
     rewardList: []
@@ -343,7 +343,7 @@ MonoBehaviour:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 514e0c09-4efb-4703-b41e-ea8e8172ee55
     ID: bonus
     storeIDs: []
@@ -351,7 +351,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 9
+      rid: 9
     type: 1
     title: bonus
     description: example for a permanent product.
@@ -361,24 +361,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 1000
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 10
+        rid: 10
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 4272168d-8830-4a4e-99db-b65c35a9330b
     ID: weapon_1
     storeIDs: []
@@ -386,7 +386,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 11
+      rid: 11
     type: 1
     title: weapon 1
     description: example for a single selectable group.
@@ -397,16 +397,16 @@ MonoBehaviour:
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 12
+        rid: 12
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 7bac1269-d945-4d08-89a2-cc8a7d9429a4
     ID: weapon_2
     storeIDs: []
@@ -414,7 +414,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 11
+      rid: 11
     type: 1
     title: weapon 2
     description: example for a single selectable group.
@@ -424,24 +424,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 500
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 13
+        rid: 13
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: d78ab29b-fcf7-4911-9d9d-c30bbfac820a
     ID: weapon_3
     storeIDs: []
@@ -449,7 +449,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 11
+      rid: 11
     type: 1
     title: weapon 3
     description: example for a single selectable group.
@@ -459,24 +459,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 1000
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 14
+        rid: 14
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: a384b267-e3a7-4092-a30c-6946311d69ec
     ID: gear_1
     storeIDs: []
@@ -484,7 +484,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 15
+      rid: 15
     type: 1
     title: gear 1
     description: example for a multi selectable group.
@@ -494,24 +494,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 200
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 16
+        rid: 16
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: a00f4298-df0d-4f2d-ac71-cf3b8ef84307
     ID: gear_2
     storeIDs: []
@@ -519,7 +519,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 15
+      rid: 15
     type: 1
     title: gear 2
     description: example for a multi selectable group.
@@ -529,24 +529,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 400
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 17
+        rid: 17
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 50090fab-c31b-49f4-903e-320d14a4ed9c
     ID: gear_3
     storeIDs: []
@@ -554,7 +554,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 15
+      rid: 15
     type: 1
     title: gear 3
     description: example for a multi selectable group.
@@ -564,24 +564,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 600
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 18
+        rid: 18
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 557d6c4a-7405-4b00-8fb1-0de6ab703736
     ID: secret_1
     storeIDs: []
@@ -589,7 +589,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 19
+      rid: 19
     type: 1
     title: secret 1
     description: example for an unlockable product.
@@ -599,17 +599,17 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 500
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 20
+        rid: 20
       amount: 1
       realPrice: 
     requirement:
@@ -618,7 +618,7 @@ MonoBehaviour:
         Value: 1
       label: unlock on level 1
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 21e269ca-3e07-4c59-afb0-530e95b2d67b
     ID: secret_2
     storeIDs: []
@@ -626,7 +626,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 19
+      rid: 19
     type: 1
     title: secret 2
     description: example for an unlockable product.
@@ -636,17 +636,17 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 750
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 21
+        rid: 21
       amount: 1
       realPrice: 
     requirement:
@@ -655,7 +655,7 @@ MonoBehaviour:
         Value: 2
       label: unlock on level 2
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 85198d8d-29f8-49e2-b8f3-d0ada5134496
     ID: speed
     storeIDs: []
@@ -663,7 +663,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 22
+      rid: 22
     type: 1
     title: speed
     description: example for an upgradeable product. base level.
@@ -673,24 +673,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 23
+        rid: 23
       product:
-        id: 1
+        rid: -2
       amount: 500
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 24
+        rid: 24
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 25
+      rid: 25
   - referenceID: ff9f58e9-a516-4590-83cc-374842da9839
     ID: speed_1
     storeIDs: []
@@ -698,7 +698,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 26
+      rid: 26
     type: 1
     title: speed 1
     description: example for an upgradeable product. level 1.
@@ -708,24 +708,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 50
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 27
+        rid: 27
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 28
+      rid: 28
   - referenceID: c2746012-8c56-470f-96b8-e095c1d05b1e
     ID: speed_2
     storeIDs: []
@@ -733,7 +733,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 26
+      rid: 26
     type: 1
     title: speed 2
     description: example for an upgradeable product. level 2.
@@ -743,24 +743,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 100
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 28
+        rid: 28
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 29
+      rid: 29
   - referenceID: c9c0d678-27fd-477f-8446-7bbf8d507c20
     ID: speed_3
     storeIDs: []
@@ -768,7 +768,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 26
+      rid: 26
     type: 1
     title: speed 3
     description: example for an upgradeable product. level 3.
@@ -778,24 +778,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 6
+        rid: 6
       product:
-        id: 1
+        rid: -2
       amount: 200
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 29
+        rid: 29
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 61c76a0b-4af7-427e-9aad-a1c3942e5ecb
     ID: abo_weekly
     storeIDs:
@@ -809,7 +809,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 30
+      rid: 30
     type: 2
     title: subscription 2
     description: example for a subscription product.
@@ -819,24 +819,24 @@ MonoBehaviour:
     priceList:
     - type: 0
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 1
+        rid: -2
       amount: 0
       realPrice: $0.99
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 31
+        rid: 31
       amount: 1
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   - referenceID: 6e56ec20-ff9b-456d-abb1-c6647e6dadce
     ID: energy
     storeIDs: []
@@ -844,7 +844,7 @@ MonoBehaviour:
       active: 0
       provider: 0
     category:
-      id: 32
+      rid: 32
     type: 0
     title: energy
     description: example for a consumable product. consumed later.
@@ -854,24 +854,24 @@ MonoBehaviour:
     priceList:
     - type: 1
       currency:
-        id: 23
+        rid: 23
       product:
-        id: 1
+        rid: -2
       amount: 250
       realPrice: 
     rewardList:
     - type: 2
       currency:
-        id: 1
+        rid: -2
       product:
-        id: 33
+        rid: 33
       amount: 5
       realPrice: 
     requirement:
       pairs: []
       label: 
     nextUpgrade:
-      id: 1
+      rid: -2
   customStoreConfig:
     PayPal:
       enabled: 0
@@ -884,8 +884,11 @@ MonoBehaviour:
         secretKey: 
       returnUrl: 
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 0
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: ebb00b17-b647-4c77-b50f-ee9e7c4ba0ca
@@ -894,9 +897,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000001:
-      type: {class: , ns: , asm: }
-    00000002:
+    - rid: 2
       type: {class: IAPCurrency, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
@@ -904,7 +905,7 @@ MonoBehaviour:
         baseAmount: 0
         maxAmount: 0
         icon: {fileID: 0}
-    00000003:
+    - rid: 3
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: c5ea337a-d2d6-456f-89f5-e8c664caeda8
@@ -914,7 +915,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 0
+          rid: 0
         type: 1
         title: bundle
         description: example for a product bundle.
@@ -924,32 +925,32 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $4.99
         rewardList:
         - type: 1
           currency:
-            id: 2
+            rid: 2
           product:
-            id: 1
+            rid: -2
           amount: 1000
           realPrice: 
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 3
+            rid: 3
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000004:
+          rid: -2
+    - rid: 4
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
@@ -962,7 +963,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 5
+          rid: 5
         type: 1
         title: no ads
         description: example for a permanent product.
@@ -972,25 +973,25 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $2.49
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 7
+            rid: 7
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000005:
+          rid: -2
+    - rid: 5
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 3097ec21-dab5-4a80-82d4-1cfe4b4c54e7
@@ -999,7 +1000,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000006:
+    - rid: 6
       type: {class: IAPCurrency, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
@@ -1007,7 +1008,7 @@ MonoBehaviour:
         baseAmount: 0
         maxAmount: 0
         icon: {fileID: 0}
-    00000007:
+    - rid: 7
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
@@ -1017,7 +1018,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 5
+          rid: 5
         type: 1
         title: no_ads
         description: disables ads from showing up.
@@ -1027,25 +1028,25 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $1.99
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 7
+            rid: 7
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000008:
+          rid: -2
+    - rid: 8
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: a832c1c4-cadc-426b-8e4e-cda32d42434b
@@ -1055,7 +1056,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 5
+          rid: 5
         type: 2
         title: abo_monthly
         description: monthly abo for awesome features.
@@ -1065,25 +1066,25 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $0.99
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 8
+            rid: 8
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000009:
+          rid: -2
+    - rid: 9
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 57f68752-04ea-481c-8844-c9ca3141d336
@@ -1092,7 +1093,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    0000000A:
+    - rid: 10
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 514e0c09-4efb-4703-b41e-ea8e8172ee55
@@ -1102,7 +1103,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 9
+          rid: 9
         type: 1
         title: bonus
         description: unlocks a bonus level. non-consum.
@@ -1112,46 +1113,46 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 2000
           realPrice: 
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 34
+            rid: 34
           amount: 1
           realPrice: 
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 35
+            rid: 35
           amount: 5
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 10
+            rid: 10
           amount: 1
           realPrice: 
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 36
+            rid: 36
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    0000000B:
+          rid: -2
+    - rid: 11
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 41ce255e-edc1-496e-871e-01cda8f0a8ec
@@ -1160,7 +1161,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    0000000C:
+    - rid: 12
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 4272168d-8830-4a4e-99db-b65c35a9330b
@@ -1170,7 +1171,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 11
+          rid: 11
         type: 1
         title: weapon 1
         description: example for a single selectable group.
@@ -1181,17 +1182,17 @@ MonoBehaviour:
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 12
+            rid: 12
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    0000000D:
+          rid: -2
+    - rid: 13
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 7bac1269-d945-4d08-89a2-cc8a7d9429a4
@@ -1201,7 +1202,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 11
+          rid: 11
         type: 1
         title: weapon 2
         description: example for a single selectable group.
@@ -1211,25 +1212,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 500
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 13
+            rid: 13
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    0000000E:
+          rid: -2
+    - rid: 14
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: d78ab29b-fcf7-4911-9d9d-c30bbfac820a
@@ -1239,7 +1240,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 11
+          rid: 11
         type: 1
         title: weapon 3
         description: example for a single selectable group.
@@ -1249,25 +1250,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 1000
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 14
+            rid: 14
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    0000000F:
+          rid: -2
+    - rid: 15
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 39841d36-a030-4270-988c-b1d99708b47f
@@ -1276,7 +1277,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000010:
+    - rid: 16
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: a384b267-e3a7-4092-a30c-6946311d69ec
@@ -1286,7 +1287,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 15
+          rid: 15
         type: 1
         title: gear 1
         description: example for a multi selectable group.
@@ -1296,25 +1297,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 200
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 16
+            rid: 16
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000011:
+          rid: -2
+    - rid: 17
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: a00f4298-df0d-4f2d-ac71-cf3b8ef84307
@@ -1324,7 +1325,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 15
+          rid: 15
         type: 1
         title: gear 2
         description: example for a multi selectable group.
@@ -1334,25 +1335,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 400
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 17
+            rid: 17
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000012:
+          rid: -2
+    - rid: 18
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 50090fab-c31b-49f4-903e-320d14a4ed9c
@@ -1362,7 +1363,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 15
+          rid: 15
         type: 1
         title: gear 3
         description: example for a multi selectable group.
@@ -1372,25 +1373,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 600
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 18
+            rid: 18
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000013:
+          rid: -2
+    - rid: 19
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 5bb483c1-953a-4b56-a703-aa9e86ca185b
@@ -1399,7 +1400,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000014:
+    - rid: 20
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 557d6c4a-7405-4b00-8fb1-0de6ab703736
@@ -1409,7 +1410,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 19
+          rid: 19
         type: 1
         title: secret 1
         description: example for an unlockable product.
@@ -1419,17 +1420,17 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 500
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 20
+            rid: 20
           amount: 1
           realPrice: 
         requirement:
@@ -1438,8 +1439,8 @@ MonoBehaviour:
             Value: 1
           label: unlock on level 1
         nextUpgrade:
-          id: 1
-    00000015:
+          rid: -2
+    - rid: 21
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 21e269ca-3e07-4c59-afb0-530e95b2d67b
@@ -1449,7 +1450,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 19
+          rid: 19
         type: 1
         title: secret 2
         description: example for an unlockable product.
@@ -1459,17 +1460,17 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 750
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 21
+            rid: 21
           amount: 1
           realPrice: 
         requirement:
@@ -1478,8 +1479,8 @@ MonoBehaviour:
             Value: 2
           label: unlock on level 2
         nextUpgrade:
-          id: 1
-    00000016:
+          rid: -2
+    - rid: 22
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 5828302c-b240-4850-a91a-10b212f1255c
@@ -1488,7 +1489,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000017:
+    - rid: 23
       type: {class: IAPCurrency, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
@@ -1496,7 +1497,7 @@ MonoBehaviour:
         baseAmount: 0
         maxAmount: 0
         icon: {fileID: 21300000, guid: d84fc91eaef14d14a8f21f8984c43d38, type: 3}
-    00000018:
+    - rid: 24
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 85198d8d-29f8-49e2-b8f3-d0ada5134496
@@ -1506,7 +1507,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 22
+          rid: 22
         type: 1
         title: speed
         description: gain a speed boost at start.
@@ -1516,25 +1517,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 23
+            rid: 23
           product:
-            id: 1
+            rid: -2
           amount: 500
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 24
+            rid: 24
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 25
-    00000019:
+          rid: 25
+    - rid: 25
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: ff9f58e9-a516-4590-83cc-374842da9839
@@ -1544,7 +1545,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 26
+          rid: 26
         type: 1
         title: speed 1
         description: 'gain a speed boost at start. next upgrade: +10%'
@@ -1554,25 +1555,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 50
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 27
+            rid: 27
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 28
-    0000001A:
+          rid: 28
+    - rid: 26
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 5828302c-b240-4850-a91a-10b212f1255c
@@ -1581,7 +1582,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    0000001B:
+    - rid: 27
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: ff9f58e9-a516-4590-83cc-374842da9839
@@ -1591,7 +1592,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 26
+          rid: 26
         type: 1
         title: speed 1
         description: 'gain a speed boost at start. next upgrade: +10%'
@@ -1601,25 +1602,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 50
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 27
+            rid: 27
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 28
-    0000001C:
+          rid: 28
+    - rid: 28
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: c2746012-8c56-470f-96b8-e095c1d05b1e
@@ -1629,7 +1630,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 26
+          rid: 26
         type: 1
         title: speed 2
         description: 'gain a speed boost at start. next upgrade: +20%'
@@ -1639,25 +1640,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 100
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 28
+            rid: 28
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 29
-    0000001D:
+          rid: 29
+    - rid: 29
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: c9c0d678-27fd-477f-8446-7bbf8d507c20
@@ -1667,7 +1668,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 26
+          rid: 26
         type: 1
         title: speed 3
         description: 'gain a speed boost at start. next upgrade: +30%'
@@ -1677,25 +1678,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 150
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 29
+            rid: 29
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    0000001E:
+          rid: -2
+    - rid: 30
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 3097ec21-dab5-4a80-82d4-1cfe4b4c54e7
@@ -1704,7 +1705,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    0000001F:
+    - rid: 31
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 61c76a0b-4af7-427e-9aad-a1c3942e5ecb
@@ -1717,7 +1718,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 30
+          rid: 30
         type: 2
         title: subscription
         description: subscription for awesome features.
@@ -1727,25 +1728,25 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $0.99
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 31
+            rid: 31
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000020:
+          rid: -2
+    - rid: 32
       type: {class: IAPCategory, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 2cc7f5ff-954f-45d6-adab-485eea63e7ae
@@ -1754,7 +1755,7 @@ MonoBehaviour:
         customBilling:
           active: 0
           provider: 0
-    00000021:
+    - rid: 33
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 6e56ec20-ff9b-456d-abb1-c6647e6dadce
@@ -1764,7 +1765,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 32
+          rid: 32
         type: 0
         title: energy
         description: a charge of energy. consumable.
@@ -1774,25 +1775,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 23
+            rid: 23
           product:
-            id: 1
+            rid: -2
           amount: 400
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 33
+            rid: 33
           amount: 5
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000022:
+          rid: -2
+    - rid: 34
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 0f42277a-14da-4897-a0be-07fd028e8f3a
@@ -1802,7 +1803,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 9
+          rid: 9
         type: 0
         title: health
         description: a pack of medikits. consumable.
@@ -1812,25 +1813,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 250
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 34
+            rid: 34
           amount: 3
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000023:
+          rid: -2
+    - rid: 35
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 00baa379-8f28-4b91-86df-71df750136a6
@@ -1840,7 +1841,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 9
+          rid: 9
         type: 0
         title: bullets
         description: a pack of ammunition. consumable.
@@ -1850,25 +1851,25 @@ MonoBehaviour:
         priceList:
         - type: 1
           currency:
-            id: 6
+            rid: 6
           product:
-            id: 1
+            rid: -2
           amount: 250
           realPrice: 
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 35
+            rid: 35
           amount: 10
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
-    00000024:
+          rid: -2
+    - rid: 36
       type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
       data:
         referenceID: 17ea6cfd-a02a-493f-b3d3-53a3496c8f7a
@@ -1878,7 +1879,7 @@ MonoBehaviour:
           active: 0
           provider: 0
         category:
-          id: 5
+          rid: 5
         type: 1
         title: no_ads
         description: disables ads from showing up.
@@ -1888,21 +1889,21 @@ MonoBehaviour:
         priceList:
         - type: 0
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 1
+            rid: -2
           amount: 0
           realPrice: $1.99
         rewardList:
         - type: 2
           currency:
-            id: 1
+            rid: -2
           product:
-            id: 36
+            rid: 36
           amount: 1
           realPrice: 
         requirement:
           pairs: []
           label: 
         nextUpgrade:
-          id: 1
+          rid: -2
