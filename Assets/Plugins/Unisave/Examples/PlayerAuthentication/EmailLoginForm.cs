@@ -22,9 +22,10 @@ namespace Unisave.Examples.PlayerAuthentication
         public Button loginButton;
         public Text statusText;
         public GameObject whois;
+
+        public GameObject gamescreen;
         void Start()
         {
-            Debug.Log(PlayerPrefs.GetString("isSubscribed"));
             if (emailField == null)
                 throw new ArgumentException(
                     $"Link the '{nameof(emailField)}' in the inspector."
@@ -65,6 +66,8 @@ namespace Unisave.Examples.PlayerAuthentication
             {
                 statusText.text = "Login succeeded";
                 whois.GetComponent<WhoIsController>().SaveInfo();
+                this.transform.parent.gameObject.SetActive(false);
+                gamescreen.SetActive(true);
             }
             else
             {

@@ -24,7 +24,9 @@ namespace Unisave.Examples.PlayerAuthentication
         public InputField confirmPasswordField;
         public Button registerButton;
         public Text statusText;
-    
+
+        public GameObject gamescreen;
+
         void Start()
         {
             if (emailField == null)
@@ -79,6 +81,9 @@ namespace Unisave.Examples.PlayerAuthentication
             {
                 case EmailRegisterResponse.Ok:
                     statusText.text = "Registration succeeded";
+                    this.transform.parent.gameObject.SetActive(false);
+                    PlayerPrefs.SetString("isSubscribed", "no");
+                    gamescreen.SetActive(true);
                     break;
             
                 case EmailRegisterResponse.EmailTaken:
