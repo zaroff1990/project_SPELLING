@@ -337,7 +337,8 @@ namespace SIS
                     return;
                 }
             }
-
+            GameManager.isSubbed = "yes";
+            PlayerPrefs.SetString("isSubscribed", "yes");
             IAPManager.Purchase(productID);
         }
 

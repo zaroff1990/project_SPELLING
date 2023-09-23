@@ -79,6 +79,7 @@ public class MainMuen : MonoBehaviour
                             unit = " ";
                             chapter = "Silent e";
                         }
+
                         GameObject tmp = Instantiate(button);
                         tmp.transform.parent = button.transform.parent;
                         tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = unit;
@@ -92,6 +93,15 @@ public class MainMuen : MonoBehaviour
                         tmp.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(
                             tmp.transform.parent.GetComponent<RectTransform>().sizeDelta.x + tmp.GetComponent<RectTransform>().sizeDelta.x,
                             tmp.transform.parent.GetComponent<RectTransform>().sizeDelta.y);
+
+                        if (PlayerPrefs.GetString("isSubscribed")== "no" && !name.Contains("cvc"))
+                        {
+                            tmp.transform.GetChild(4).gameObject.SetActive(true);
+                            tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+                            tmp.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "LOCKED";
+                            tmp.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+                            tmp.transform.GetChild(3).gameObject.SetActive(false);
+                        }
                     }
                 }
             }
@@ -103,6 +113,6 @@ public class MainMuen : MonoBehaviour
         FieldInfo fieldInfo = myClassType.GetField(selection);
         gameScreen.transform.GetChild(0).gameObject.GetComponent<GameManager>().trail = (string[])fieldInfo.GetValue(myClassInstance);
         gameScreen.SetActive(true);
-        this.GetComponent<Canvas>().enabled = false;
+        //this.GetComponent<Canvas>().enabled = false;
     }
 }

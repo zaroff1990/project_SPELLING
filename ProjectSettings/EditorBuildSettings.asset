@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/mainGame.unity
+    path: Assets/Plugins/Unisave/Examples/PlayerAuthentication/Backend/mainGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Plugins/Unisave/Examples/PlayerAuthentication/PlayerAuthentication.unity
-    guid: 151faa001928ab19a93116a24bd13dba
-  - enabled: 1
-    path: Assets/SimpleIAPSystem/Scenes/01 Buttons.unity
-    guid: 86ca8e9f3e9df4dc99772f7476edaa2c
   m_configObjects: {}

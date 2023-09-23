@@ -81,7 +81,7 @@ namespace Unisave.Examples.PlayerAuthentication
             {
                 case EmailRegisterResponse.Ok:
                     statusText.text = "Registration succeeded";
-                    this.transform.parent.gameObject.SetActive(false);
+                    //this.transform.parent.gameObject.GetComponent<Canvas>().enabled = false;
                     PlayerPrefs.SetString("isSubscribed", "no");
                     gamescreen.SetActive(true);
                     break;

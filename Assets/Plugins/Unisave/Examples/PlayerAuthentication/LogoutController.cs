@@ -11,6 +11,7 @@ namespace Unisave.Examples.PlayerAuthentication
     {
         public Button logoutButton;
 
+        public GameObject gamescreen;
         private void Start()
         {
             if (logoutButton == null)
@@ -36,7 +37,11 @@ namespace Unisave.Examples.PlayerAuthentication
             // implement your own logic here
 
             if (wasLoggedIn)
+            {
+                gamescreen.SetActive(false);
+                //this.transform.parent.gameObject.GetComponent<Canvas>().enabled = true;
                 Debug.Log("Logout successful!");
+            }
             else
                 Debug.Log("There was no player to logout.");
         }

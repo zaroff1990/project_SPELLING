@@ -20,17 +20,7 @@ public class GameManager : MonoBehaviour
 
     public RectTransform heldLetter;
 
-    [System.Flags]
-    public enum GameMode
-    {
-        Debug = 0,
-        Easy = 1 << 0,
-        Medium = 1 << 1,
-        Hard = 1 << 2,
-    }
     public int diff = 0;
-    [SerializeField]
-    private GameMode selectedOption;
 
     public string[] trail;
     public AudioClip trail_audio;
@@ -53,7 +43,7 @@ public class GameManager : MonoBehaviour
     public string vidHappy = "https://zaroffmars.com/wp-content/uploads/spell2/happy.mp4";
     public string vidSad = "https://zaroffmars.com/wp-content/uploads/spell2/sad.mp4";
 
-    public static string isSubbed;
+    public static string isSubbed="no";
     public static DateTime subEnds = DateTime.Now;
 
     // Start is called before the first frame update
@@ -61,7 +51,36 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         isSubbed = PlayerPrefs.GetString("isSubscribed", "no");
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(DelayStart());
+    }
+
+    public IEnumerator DelayStart()
+    {
+        yield return new WaitForSeconds(0.1f);
         StartWord();
+    }
+
+    public void EndGame()
+    {
+        gamePause = false;
+        currentWord = null;
+        answerWord = null;
+        trail_audio = null;
+        currentMix = null;
+        animDog.url = vidIdle;
+        animDog.isLooping = true;
+        currentLevel = 0;
+        LetterPiece[] objectsWithMyScript = FindObjectsOfType<LetterPiece>();
+        foreach (LetterPiece script in objectsWithMyScript)
+        {
+            script.KillPiece();
+        }
+        //GameObject.Find("Menu").GetComponent<Canvas>().enabled = true;
+        this.transform.parent.gameObject.SetActive(false);
     }
 
     public void StartWord()
@@ -90,10 +109,6 @@ public class GameManager : MonoBehaviour
             tmp.transform.GetChild(1).gameObject.SetActive(true);
         }
 
-        if (selectedOption == GameMode.Debug)
-        {
-            diff = 5;
-        }
         int rnd = UnityEngine.Random.Range(0, diff - 1);
         for (int i = 0; i <= mixSpace.Length - 1; i++)
         {
@@ -136,10 +151,14 @@ public class GameManager : MonoBehaviour
             StartCoroutine(timeVideo(1f));
             gamePause = true;
             yield return new WaitForSeconds(1f);
+            currentLevel++;
             if (currentLevel < trail.Length - 1)
             {
-                currentLevel++;
                 StartWord();
+            }
+            else
+            {
+                EndGame();
             }
         }
         else

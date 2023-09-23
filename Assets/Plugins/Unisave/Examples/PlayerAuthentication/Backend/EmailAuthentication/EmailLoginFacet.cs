@@ -59,7 +59,8 @@ namespace Unisave.Examples.PlayerAuthentication.Backend.EmailAuthentication
             if (player == null)
                 return false;
 
-            playerz.isSubscribed = "w2323e";
+            playerz.isSubscribed = "yes";
+            playerz.subEnds = DateTime.Today.AddDays(365);
             //UnityEngine.PlayerPrefs.SetString("isSubscribed", player.isSubscribed);
             playerz.Save();
             return true;

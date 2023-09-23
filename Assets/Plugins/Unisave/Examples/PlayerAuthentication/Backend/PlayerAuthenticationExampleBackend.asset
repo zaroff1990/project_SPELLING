@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uploadBehaviour: check-scenes
   scenesToCheck:
-  - {fileID: 102900000, guid: 151faa001928ab19a93116a24bd13dba, type: 3}
+  - {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
