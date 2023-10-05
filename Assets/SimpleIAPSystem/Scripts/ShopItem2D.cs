@@ -129,7 +129,7 @@ namespace SIS
         //boolean for detecting automated or manual initialization
         private bool IsInitialized = false;
 
-
+        bool hasStart = false;
         //set up delegates and selection checkboxes
         void Start()
         {
@@ -163,7 +163,6 @@ namespace SIS
         public void Init(IAPProduct product)
         {
             if (product == null) return;
-
             //cache
             IsInitialized = true;
             productID = product.ID;
@@ -258,7 +257,7 @@ namespace SIS
                 TimeSpan remaining = DateTime.Parse(product.customData["expiration"]) - DateTime.Now;
                 expiration.text = remaining.TotalDays > 2 ? Mathf.FloorToInt((float)remaining.TotalDays) + "d" : Mathf.FloorToInt((float)remaining.TotalHours) + "h";
             }
-
+            //if (hasStart)
             Unlock();
 
             //double check that selected items are actually owned
@@ -283,6 +282,7 @@ namespace SIS
                     IsSelected(true);
                 }
             }
+            hasStart = true;
         }
 
 
@@ -297,7 +297,6 @@ namespace SIS
             //check if a requirement is set up for this item, then un/lock depending on requirement fulfillment
             //also unlock if the product was maybe rewarded manually even though the requirement has not been met yet
             bool lockState = !product.requirement.Exists() || DBManager.IsRequirementMet(product.requirement) || DBManager.IsPurchased(product.ID);
-
             //set locked label text in case a requirement has been set
             string lockText = product.requirement.label;
             if (lockedLabel && !string.IsNullOrEmpty(lockText))
@@ -374,7 +373,8 @@ namespace SIS
             //hide both buy trigger and buy button, for ignoring further purchase clicks.
             //but don't do that for subscriptions, so that the user could easily renew it
             if ((int)product.type > 1) return;
-
+            for (int i = 0; i < showOnUnlock.Length; i++)
+                showOnUnlock[i].SetActive(true);
             buyButton.SetActive(!state);
         }
 

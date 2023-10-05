@@ -54,7 +54,7 @@ namespace Unisave.Examples.PlayerAuthentication.Backend.EmailAuthentication
         public bool PlayerSendInfo(string player)
         {
             var playerz = EmailAuthUtils.FindPlayer(player);
-
+            
 
             if (player == null)
                 return false;

@@ -20,6 +20,8 @@ public class MainMuen : MonoBehaviour
     public Type myClassType;
     public WordTrails myClassInstance;
 
+    public GameObject iap;
+
     void Start()
     {
         // Get the Type of the class
@@ -37,6 +39,10 @@ public class MainMuen : MonoBehaviour
             variableNames[i] = fields[i].Name;
         }
         level = 1;
+        if (PlayerPrefs.GetString("isSubscribed") == "no")
+        {
+            iap.SetActive(true);
+        }
         // Print the variable names for debugging purposes
         foreach (string name in variableNames)
         {
