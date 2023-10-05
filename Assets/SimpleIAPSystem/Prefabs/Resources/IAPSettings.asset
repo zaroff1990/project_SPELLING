@@ -46,7 +46,14 @@ MonoBehaviour:
         rid: -2
       amount: 0
       realPrice: 5.99
-    rewardList: []
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 6252796309587886080
+      amount: 1
+      realPrice: 
     requirement:
       pairs: []
       label: 
@@ -93,7 +100,7 @@ MonoBehaviour:
       live:
         clientID: AdkgOZ23cH0OCjcKSfLbLQPqjJGUPb4EsNQ55tch9njyunueHpaA84L1UsR497FTVgPjs_KuYkQwrHZS
         secretKey: EK24ABBKuojrCIdXGFuxaMWPo_zAZu_syr1VXaxoO6BV-Be5f7yUch6qLYbd8n-1GQ5KVuvqvAPSbuBC
-      returnUrl: https://sandbox.paypal.com
+      returnUrl: https://zaroffmars.com/thanks-close/
   references:
     version: 2
     RefIds:
@@ -117,3 +124,44 @@ MonoBehaviour:
         customBilling:
           active: 1
           provider: 0
+    - rid: 6252796309587886080
+      type: {class: IAPProduct, ns: SIS, asm: Assembly-CSharp}
+      data:
+        referenceID: 92f99d15-04fc-4770-84ec-f262bce5710c
+        ID: sub (dev)
+        storeIDs:
+        - active: 1
+          store: PayPal
+          ID: P-59D90800JJ428773YMUG6LEA
+        customBilling:
+          active: 1
+          provider: 0
+        category:
+          rid: 2245954222657110016
+        type: 2
+        title: Unlock All Content
+        description: Yearly Subscription of $49.99
+        discount: 0
+        fetch: 1
+        icon: {fileID: 21300000, guid: 3f68f2d76354338ca901aa082fbdc272, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 5.99
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 6252796309587886080
+          amount: 1
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2

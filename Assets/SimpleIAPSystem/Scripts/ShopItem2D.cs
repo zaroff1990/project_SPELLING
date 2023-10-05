@@ -336,8 +336,7 @@ namespace SIS
                     return;
                 }
             }
-            GameManager.isSubbed = "yes";
-            PlayerPrefs.SetString("isSubscribed", "yes");
+
             IAPManager.Purchase(productID);
         }
 
@@ -367,7 +366,11 @@ namespace SIS
             }
 
             //activate the sold gameobject
-            if (sold) sold.SetActive(state);
+            if (sold)
+            {
+                sold.SetActive(state);
+            }
+
             if (discounted) discounted.SetActive(false);
 
             //hide both buy trigger and buy button, for ignoring further purchase clicks.

@@ -22,8 +22,36 @@ public class MainMuen : MonoBehaviour
 
     public GameObject iap;
 
+    private void OnEnable()
+    {
+        if (PlayerPrefs.GetString("isSubscribed") == "no")
+        {
+            foreach (var gameObj in GameObject.FindGameObjectsWithTag("button"))
+            {
+                gameObj.GetComponent<MenuButton>().Lock();
+            }
+            iap.SetActive(true);
+        }
+        else
+        {
+            foreach (var gameObj in GameObject.FindGameObjectsWithTag("button"))
+            {
+                gameObj.GetComponent<MenuButton>().Unlock();
+            }
+            iap.SetActive(false);
+        }
+        GameObject.Find("LoginStatusText").GetComponent<Text>().text = "";
+        GameObject.Find("RegistrationStatusText").GetComponent<Text>().text = "";
+    }
+
     void Start()
     {
+
+        foreach (var gameObj in GameObject.FindGameObjectsWithTag("button"))
+        {
+            gameObj.GetComponent<MenuButton>().Unlock();
+        }
+
         // Get the Type of the class
         myClassType = typeof(WordTrails);
 
@@ -39,10 +67,6 @@ public class MainMuen : MonoBehaviour
             variableNames[i] = fields[i].Name;
         }
         level = 1;
-        if (PlayerPrefs.GetString("isSubscribed") == "no")
-        {
-            iap.SetActive(true);
-        }
         // Print the variable names for debugging purposes
         foreach (string name in variableNames)
         {
@@ -100,6 +124,10 @@ public class MainMuen : MonoBehaviour
                             tmp.transform.parent.GetComponent<RectTransform>().sizeDelta.x + tmp.GetComponent<RectTransform>().sizeDelta.x,
                             tmp.transform.parent.GetComponent<RectTransform>().sizeDelta.y);
 
+                        tmp.GetComponent<MenuButton>().unit = unit;
+                        tmp.GetComponent<MenuButton>().chapter = chapter;
+                        tmp.GetComponent<MenuButton>().level = level.ToString();
+
                         if (PlayerPrefs.GetString("isSubscribed")== "no" && !name.Contains("cvc"))
                         {
                             tmp.transform.GetChild(4).gameObject.SetActive(true);
@@ -120,5 +148,15 @@ public class MainMuen : MonoBehaviour
         gameScreen.transform.GetChild(0).gameObject.GetComponent<GameManager>().trail = (string[])fieldInfo.GetValue(myClassInstance);
         gameScreen.SetActive(true);
         //this.GetComponent<Canvas>().enabled = false;
+    }
+
+    public void Reset()
+    {
+        foreach (var gameObj in GameObject.FindGameObjectsWithTag("button"))
+        {
+            gameObj.GetComponent<MenuButton>().Unlock();
+        }
+        GameObject.Find("DidBuy").SetActive(false);
+        iap.SetActive(false);
     }
 }

@@ -29,6 +29,7 @@ namespace Unisave.Examples.PlayerAuthentication
 
         void Start()
         {
+            PlayerPrefs.DeleteKey("isSubscribed");
             if (emailField == null)
                 throw new ArgumentException(
                     $"Link the '{nameof(emailField)}' in the inspector."
@@ -81,7 +82,6 @@ namespace Unisave.Examples.PlayerAuthentication
             {
                 case EmailRegisterResponse.Ok:
                     statusText.text = "Registration succeeded";
-                    //this.transform.parent.gameObject.GetComponent<Canvas>().enabled = false;
                     PlayerPrefs.SetString("isSubscribed", "no");
                     gamescreen.SetActive(true);
                     break;

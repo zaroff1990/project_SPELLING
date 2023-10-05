@@ -66,13 +66,17 @@ namespace Unisave.Examples.PlayerAuthentication
             {
                 statusText.text = "Login succeeded";
                 whois.GetComponent<WhoIsController>().SaveInfo();
-                //this.transform.parent.gameObject.GetComponent<Canvas>().enabled = false;
-                gamescreen.SetActive(true);
             }
             else
             {
                 statusText.text = "Given credentials are not valid";
             }
+        }
+
+        public void StartGame()
+        {
+            //this.transform.parent.gameObject.GetComponent<Canvas>().enabled = false;
+            gamescreen.SetActive(true);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace SIS
             if (product == null) return;
 
             this.productID = productID;
-            label.text = product.title;
+            //label.text = product.title;
             icon.sprite = product.icon;
 
             gameObject.SetActive(true);

@@ -49,9 +49,15 @@ namespace Unisave.Examples.PlayerAuthentication
             );
 
             if (player == null)
+            {
                 Debug.Log("There is no logged in player.");
+            }
             else
+            {
+                Debug.Log(player.isSubscribed);
                 PlayerPrefs.SetString("isSubscribed", player.isSubscribed);
+            }
+            GameObject.Find("UI Controllers").GetComponent<EmailLoginForm>().StartGame();
         }
 
         public async void SendInfo()

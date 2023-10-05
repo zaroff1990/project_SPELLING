@@ -22,11 +22,6 @@ namespace Unisave.Examples.PlayerAuthentication
         private void OnEnable()
         {
             whois.GetComponent<WhoIsController>().SendInfo();
-            foreach (var gameObj in GameObject.FindGameObjectsWithTag("iapLock"))
-            {
-                Destroy(gameObj);
-            }
-            gameObject.SetActive(false);
         }
     }
 }

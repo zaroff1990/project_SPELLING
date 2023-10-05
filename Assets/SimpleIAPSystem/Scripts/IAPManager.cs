@@ -26,6 +26,7 @@ namespace SIS
     public class IAPManager : MonoBehaviour
     #endif
     {
+        public GameObject boughtIAP;
         /// <summary>
         /// Reference to the IAP configuration asset made in the Project Settings window.
         /// </summary>
@@ -544,13 +545,21 @@ namespace SIS
                         break;
                 }               
             }
-
+            GameManager.isSubbed = "yes";
+            PlayerPrefs.SetString("isSubscribed", "yes");
+            boughtIAP.SetActive(true);
             if (withEvent)
             {
                 purchaseSucceededEvent?.Invoke(product.ID);
             }
         }
-
+        public void ForceBuy()
+        {
+            GameManager.isSubbed = "yes";
+            PlayerPrefs.SetString("isSubscribed", "yes");
+            boughtIAP.SetActive(true);
+            purchaseSucceededEvent?.Invoke("Yearly Subscription");
+        }
 
         /// <summary>
         /// Consumes a purchase after successful verification (or without).
