@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
 
@@ -39,9 +40,9 @@ public class GameManager : MonoBehaviour
     public AudioClip sfxChoiceWrong;
 
     public VideoPlayer animDog;
-    public string vidIdle = "https://zaroffmars.com/wp-content/uploads/spell2/idle.mp4";
-    public string vidHappy = "https://zaroffmars.com/wp-content/uploads/spell2/happy.mp4";
-    public string vidSad = "https://zaroffmars.com/wp-content/uploads/spell2/sad.mp4";
+    public string vidIdle = "https://zaroffmars.com/wp-content/uploads/idle.mp4";
+    public string vidHappy = "https://zaroffmars.com/wp-content/uploads/happy.mp4";
+    public string vidSad = "https://zaroffmars.com/wp-content/uploads/sad.mp4";
 
     public static string isSubbed="no";
     public static DateTime subEnds = DateTime.Now;
@@ -89,10 +90,11 @@ public class GameManager : MonoBehaviour
         currentWord = trail[currentLevel];
         answerWord = trail[currentLevel + 1];
         trail_audio = Resources.Load<AudioClip>("voice_hailey_" + answerWord);
-        currentMix = FindDifferentCharacters(currentWord, answerWord);
+        currentMix = FindDifferentCharacters(currentWord.ToLower(), answerWord.ToLower());
         animDog.url = vidIdle;
         animDog.isLooping = true;
         animDog.Play();
+
         LetterPiece[] objectsWithMyScript = FindObjectsOfType<LetterPiece>();
         foreach (LetterPiece script in objectsWithMyScript)
         {
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator CheckAnswer(string word)
     {
-        if (word == answerWord)
+        if (word.ToLower() == answerWord.ToLower())
         {
             PlayAudio(sndFX, sfxChoiceRight);
             animDog.url = vidHappy;

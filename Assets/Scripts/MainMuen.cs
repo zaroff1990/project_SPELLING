@@ -22,6 +22,7 @@ public class MainMuen : MonoBehaviour
 
     public GameObject iap;
 
+    public TextMeshProUGUI txtDebug;
     private void OnEnable()
     {
         if (PlayerPrefs.GetString("isSubscribed") == "no")
@@ -81,33 +82,58 @@ public class MainMuen : MonoBehaviour
                     {
                         if (name.Contains("cvc"))
                         {
-                            unit = "1.3";
+                            unit = " ";
                             chapter = "CVC Words";
                         }
                         if (name.Contains("digraph"))
                         {
-                            unit = "1.3";
+                            unit = " ";
                             chapter = "CVC Words Including Digraphs";
                         }
-                        if (name.Contains("initialCons"))
+                        if (name.Contains("floss"))
                         {
-                            unit = "2.2";
-                            chapter = "Initial Consonant Blends, Words with 4 Sounds";
+                            unit = " ";
+                            chapter = "FLOSS Words";
                         }
-                        if (name.Contains("finalCons"))
+                        if (name.Contains("iCons"))
                         {
-                            unit = "2.2";
-                            chapter = "Final Consonant Blends, Words with 4 Sounds";
+                            unit = " ";
+                            chapter = "Initial Consonant Blends";
                         }
-                        if (name.Contains("conoBlend"))
+                        if (name.Contains("fCons"))
                         {
-                            unit = "2.4-2.5";
-                            chapter = "Consonant Blends, Words with 5 -6 Sounds";
+                            unit = " ";
+                            chapter = "Final Consonat Blends";
                         }
-                        if (name.Contains("silentE"))
+                        if (name.Contains("bCons"))
+                        {
+                            unit = " ";
+                            chapter = "Initial and Final Consonat Blends";
+                        }
+                        if (name.Contains("syllables"))
+                        {
+                            unit = " ";
+                            chapter = "Open & Closed Syllables";
+                        }
+                        if (name.Contains("silent"))
                         {
                             unit = " ";
                             chapter = "Silent e";
+                        }
+                        if (name.Contains("bossy"))
+                        {
+                            unit = " ";
+                            chapter = "Bossy r";
+                        }
+                        if (name.Contains("long"))
+                        {
+                            unit = " ";
+                            chapter = "Long Vowel Teams";
+                        }
+                        if (name.Contains("tricky"))
+                        {
+                            unit = " ";
+                            chapter = "Diphthongs & Tricky Vowel Teams";
                         }
 
                         GameObject tmp = Instantiate(button);
@@ -117,7 +143,7 @@ public class MainMuen : MonoBehaviour
                         tmp.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = level.ToString();
                         tmp.gameObject.SetActive(true);
                         tmp.gameObject.name = name;
-                        tmp.transform.GetChild(3).gameObject.GetComponent<Button>().onClick.AddListener(() => GameStart(tmp.gameObject.name));
+                        tmp.transform.GetChild(3).gameObject.GetComponent<Button>().onClick.AddListener(() => GameStart(tmp.gameObject.name,unit + chapter + level.ToString()));
                         level++;
                         if (level >= 11) { level = 1; }
                         tmp.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(
@@ -141,8 +167,9 @@ public class MainMuen : MonoBehaviour
             }
          }
     }
-    public void GameStart(string selection)
+    public void GameStart(string selection, string levelName)
     {
+        txtDebug.text = levelName;
         myClassInstance = new WordTrails();
         FieldInfo fieldInfo = myClassType.GetField(selection);
         gameScreen.transform.GetChild(0).gameObject.GetComponent<GameManager>().trail = (string[])fieldInfo.GetValue(myClassInstance);
