@@ -169,7 +169,7 @@ public class MainMuen : MonoBehaviour
     }
     public void GameStart(string selection, string levelName)
     {
-        txtDebug.text = levelName;
+        //txtDebug.text = levelName;
         myClassInstance = new WordTrails();
         FieldInfo fieldInfo = myClassType.GetField(selection);
         gameScreen.transform.GetChild(0).gameObject.GetComponent<GameManager>().trail = (string[])fieldInfo.GetValue(myClassInstance);

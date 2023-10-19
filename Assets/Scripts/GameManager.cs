@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
+using UnityEngine.Windows;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject prefabLetter;
-    public string currentWord = "";
+    public string[] currentWord;
+    public string[] answerCharas;
     public string answerWord = "";
     public string currentMix = "";
 
@@ -87,18 +90,42 @@ public class GameManager : MonoBehaviour
     public void StartWord()
     {
         gamePause = false;
-        currentWord = trail[currentLevel];
-        answerWord = trail[currentLevel + 1];
-        trail_audio = Resources.Load<AudioClip>("voice_hailey_" + answerWord);
-        currentMix = FindDifferentCharacters(currentWord.ToLower(), answerWord.ToLower());
+
+        currentWord = trail[currentLevel].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        string currentCharas = "";
+        answerWord = "";
+
+        for (int i = 0; i <= currentWord.Length - 1; i++)
+        {
+            currentCharas += currentWord[i];
+        }
+
+        answerCharas = trail[currentLevel + 1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        for (int i = 0; i <= answerCharas.Length - 1; i++)
+        {
+            answerWord += answerCharas[i];
+        }
+        currentMix = FindDifferentCharacters(currentWord, answerCharas);
+
         animDog.url = vidIdle;
         animDog.isLooping = true;
         animDog.Play();
+
+        trail_audio = Resources.Load<AudioClip>("voice_hailey_" + answerWord);
+
 
         LetterPiece[] objectsWithMyScript = FindObjectsOfType<LetterPiece>();
         foreach (LetterPiece script in objectsWithMyScript)
         {
             script.KillPiece();
+        }
+
+        string[] uniqueChars = trail.SelectMany(word => word.ToCharArray()).Distinct().Select(c => c.ToString()).ToArray();
+        string[] gameAlpha = this.GetComponent<WordTrails>().alphabet;
+        foreach (string ch in uniqueChars)
+        {
+            gameAlpha.Append(ch);
         }
 
         for (int i = 0; i <= currentWord.Length - 1; i++)
@@ -119,7 +146,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i <= diff - 1; i++)
         {
             if (i == rnd) { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentMix; }
-            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = this.GetComponent<WordTrails>().alphabet[UnityEngine.Random.Range(0, this.GetComponent<WordTrails>().alphabet.Length - 1)]; }
+            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gameAlpha[UnityEngine.Random.Range(0, gameAlpha.Length - 1)]; }
             mixSpace[i].GetComponent<ClickDrag>().enabled = false;
             mixSpace[i].GetComponent<ClickDrag>().isDragging = false;
             mixSpace[i].GetComponent<ClickDrag>().canvasGroup.blocksRaycasts = true;
@@ -190,8 +217,17 @@ public class GameManager : MonoBehaviour
         animDog.isLooping = true;
         animDog.Play();
     }
-    static string FindDifferentCharacters(string str1, string str2)
+    static string FindDifferentCharacters(string[] str1, string[] str2)
     {
+
+        var notInStringArray1 = str2.Except(str1).ToArray();
+        string find = "";
+        foreach (var item in notInStringArray1)
+        {
+            find= item;
+        }
+        return find;
+        /*
         Dictionary<char, int> freq1 = new Dictionary<char, int>();
         Dictionary<char, int> freq2 = new Dictionary<char, int>();
 
@@ -237,6 +273,7 @@ public class GameManager : MonoBehaviour
         }
 
         return differentChars;
+        */
     }
 
 }
