@@ -36,23 +36,10 @@ public class WordTrails : MonoBehaviour
         "y", "Y",
         "z", "Z"
     };
-    [HideInInspector] public string[] trailA = new string[]
-{
-    "cat",
-    "bat",
-    "hat",
-    "had",
-    "bad",
-    "sad",
-    "sat",
-    "fat",
-    "mat",
-    "mad",
-};
 
     [HideInInspector]
     public string[] cvc1 = new string[]
-    {
+{
     "c a t",
     "b a t",
     "h a t",
@@ -63,7 +50,7 @@ public class WordTrails : MonoBehaviour
     "f a t",
     "m a t",
     "m a d",
-    };
+};
 
     [HideInInspector]
     public string[] cvc2 = new string[]
@@ -72,12 +59,12 @@ public class WordTrails : MonoBehaviour
     "p e n",
     "p e t",
     "b e t",
-    "g e t",
-    "m e t",
-    "v e t",
-    "s e t",
-    "n e t",
+    "b e g",
+    "l e g",
     "l e t",
+    "l e d",
+    "b e d",
+    "w e d",
     };
 
     [HideInInspector]
@@ -101,13 +88,13 @@ public class WordTrails : MonoBehaviour
     "p o t",
     "g o t",
     "b o t",
-    "B o b",
+    "b o b",
     "j o b",
     "j o t",
     "l o t",
     "h o t",
-    "r o t",
-    "n o t",
+    "h o g",
+    "d o g",
     };
 
     [HideInInspector]
@@ -188,7 +175,7 @@ public class WordTrails : MonoBehaviour
     [HideInInspector]
     public string[] cvc10 = new string[]
     {
-    "R e x",
+    "r e d",
     "r e p",
     "p e p",
     "p u p",
@@ -196,17 +183,16 @@ public class WordTrails : MonoBehaviour
     "c a p",
     "r a p",
     "n a p",
-    "t a p",
+    "t a x",
     "t a x",
     };
-
     [HideInInspector]
-    public string[] digraph1 = new string[]
+    public string[] diagraph1 = new string[]
     {
-    "s u b",
-    "h u b",
-    "s u b",
-    "s u ck",
+    "m u g",
+    "d u g",
+    "l u g",
+    "l u ck",
     "t u ck",
     "t u x",
     "t a x",
@@ -216,7 +202,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph2 = new string[]
+    public string[] diagraph2 = new string[]
     {
     "z a p",
     "t a p",
@@ -231,7 +217,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph3 = new string[]
+    public string[] diagraph3 = new string[]
     {
     "d a sh",
     "g a sh",
@@ -246,10 +232,10 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph4 = new string[]
+    public string[] diagraph4 = new string[]
     {
     "c a sh",
-    "c a m",
+    " c a m",
     "y a m",
     "h a m",
     "h a g",
@@ -261,7 +247,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph5 = new string[]
+    public string[] diagraph5 = new string[]
     {
     "w i sh",
     "d i sh",
@@ -270,13 +256,13 @@ public class WordTrails : MonoBehaviour
     "m e sh",
     "m e t",
     "m a t",
-    "c h at",
+    "ch a t",
     "s a t",
     "s a ck",
     };
 
     [HideInInspector]
-    public string[] digraph6 = new string[]
+    public string[] diagraph6 = new string[]
     {
     "h e m",
     "th e m",
@@ -291,7 +277,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph7 = new string[]
+    public string[] diagraph7 = new string[]
     {
     "c a sh",
     "s a sh",
@@ -306,7 +292,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph8 = new string[]
+    public string[] diagraph8 = new string[]
     {
     "ch a p",
     "t a p",
@@ -321,11 +307,11 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph9 = new string[]
+    public string[] diagraph9 = new string[]
     {
     "m a th",
     "p a th",
-    "p a t",
+    "p a t ",
     "ch a t",
     "ch a p",
     "t a p",
@@ -336,7 +322,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] digraph10 = new string[]
+    public string[] diagraph10 = new string[]
     {
     "b a sh",
     "s a sh",
@@ -349,11 +335,10 @@ public class WordTrails : MonoBehaviour
     "t i n",
     "w i n",
     };
-
     [HideInInspector]
     public string[] floss1 = new string[]
     {
-    "s a p",
+    "s ap ",
     "s a ck",
     "s i ck",
     "th i ck",
@@ -383,16 +368,16 @@ public class WordTrails : MonoBehaviour
     [HideInInspector]
     public string[] floss3 = new string[]
     {
-    "d o t",
+    "d o ll",
     "d o g",
     "j o g",
     "j u g",
     "ch u g",
     "th u g",
-    "l u g",
     "r u g",
-    "r u n",
     "r u ff",
+    "p u ff",
+    "c u ff",
     };
 
     [HideInInspector]
@@ -499,39 +484,38 @@ public class WordTrails : MonoBehaviour
     "p i ll",
     "w i ll",
     };
-
     [HideInInspector]
-    public string[] iConsonate1 = new string[]
+    public string[] consonateInit1 = new string[]
     {
-    "cr a b",
-    "dr a b",
-    "gr a b",
-    "gr a d",
-    "gr a ss",
-    "gl a ss",
-    "gl o ss",
+    "c r a b",
+    "d r a b",
+    "g r a b",
+    "g r a d",
+    "g r a ss",
+    "g l a ss",
+    "g l o ss",
     "l o ss",
     "l e ss",
     "m e ss",
     };
 
     [HideInInspector]
-    public string[] iConsonate2 = new string[]
+    public string[] consonateInit2 = new string[]
     {
-    "fr o th",
-    "fr o ck",
-    "fr o g",
-    "fl o g",
-    "fl o ck",
-    "fl o ss",
+    "f r o th",
+    "f r o ck",
+    "f r o g",
+    "f l o g",
+    "f l o ck",
+    "f l o ss",
     "l o ss",
     "l o ck",
-    "cl o ck",
-    "cl o g",
+    "c l o ck",
+    "c l o g",
     };
 
     [HideInInspector]
-    public string[] iConsonate3 = new string[]
+    public string[] consonateInit3 = new string[]
     {
     "n a b",
     "j a b",
@@ -539,445 +523,442 @@ public class WordTrails : MonoBehaviour
     "J a ck",
     "y a ck",
     "s a ck",
-    "sn a ck",
-    "sn a p",
-    "sn a g",
-    "st a g",
+    "s n a ck",
+    "s n a p",
+    "s n a g",
+    "s t a g",
     };
 
     [HideInInspector]
-    public string[] iConsonate4 = new string[]
+    public string[] consonateInit4 = new string[]
     {
-    "sp a m",
-    "sl a m",
-    "sl a b",
-    "sl a g",
-    "sn a g",
-    "sw a g",
-    "sw a m",
-    "sw i m",
-    "sl i m",
-    "sl u m",
+    "s p a m",
+    "s l a m",
+    "s l a b",
+    "s l a g",
+    "s n a g",
+    "s w a g",
+    "s w a m",
+    "s w i m",
+    "s l i m",
+    "s l u m",
     };
 
     [HideInInspector]
-    public string[] iConsonate5 = new string[]
+    public string[] consonateInit5 = new string[]
     {
     "p a ck",
     "p e ck",
-    "sp e ck",
-    "sp e ll",
-    "sm e ll",
+    "s p e ck",
+    "s p e ll",
+    "s m e ll",
     "s e ll",
-    "sw e ll",
-    "dw e ll",
+    "s w e ll",
+    "d w e ll",
     "w e ll",
     "d e ll",
     };
 
     [HideInInspector]
-    public string[] iConsonate6 = new string[]
+    public string[] consonateInit6 = new string[]
     {
-    "st i ck",
-    "sl i ck",
+    "s t i ck",
+    "s l i ck",
     "l i ck",
-    "cl i ck",
-    "cl i p",
-    "sl i p",
-    "sl o p",
-    "st o p",
-    "st o ck",
+    "c l i ck",
+    "c l i p",
+    "s l i p",
+    "s l o p",
+    "s t o p",
+    "s t o ck",
     "s o ck",
     };
 
     [HideInInspector]
-    public string[] iConsonate7 = new string[]
+    public string[] consonateInit7 = new string[]
     {
-    "sl o p",
-    "sl a p",
-    "cl a p",
+    "s l o p",
+    "s l a p",
+    "c l a p",
     "c a p",
     "c a b",
-    "cr a b",
-    "dr a b",
-    "dr a g",
-    "br a g",
-    "br a ss",
+    "c r a b",
+    "d r a b",
+    "d r a g",
+    "b r a g",
+    "b r a ss",
     };
 
     [HideInInspector]
-    public string[] iConsonate8 = new string[]
+    public string[] consonateInit8 = new string[]
     {
-    "sl i d",
-    "sl i m",
-    "sl i ck",
-    "st i ck",
-    "st u ck",
-    "st u b",
+    "s l i d",
+    "s l i m",
+    "s l i ck",
+    "s t i ck",
+    "s t u ck",
+    "s t u  b",
     "s u b",
     "r u b",
-    "gr u b",
-    "gr a b",
+    "g r u b",
+    "g r a b",
     };
 
     [HideInInspector]
-    public string[] iConsonate9 = new string[]
+    public string[] consonateInit9 = new string[]
     {
-    "dr a g",
-    "cr a g",
-    "cr a sh",
-    "cr a ss",
-    "gr a ss",
-    "gr a m",
-    "gr i m",
-    "pr i m",
+    "d r a g",
+    "c r a g",
+    "c r a sh",
+    "c r a ss",
+    "g r a ss",
+    "g r a m",
+    "g r i m",
+    "p r i m",
     "r i m",
     "h i m",
     };
 
     [HideInInspector]
-    public string[] iConsonate10 = new string[]
+    public string[] consonateInit10 = new string[]
     {
-    "sm a ck",
-    "sn a ck",
-    "st a ck",
-    "st i ck",
-    "sl i ck",
-    "sl i m",
-    "sk i m",
-    "sk i n",
-    "sk i d",
-    "sl i d",
+    "s m a ck",
+    "s n a ck",
+    "s t a ck",
+    "s t i ck",
+    "s l i ck",
+    "s l i m",
+    "s k i m",
+    "s k i n",
+    "s k i d",
+    "s l i d",
     };
-
     [HideInInspector]
-    public string[] fConsonate1 = new string[]
+    public string[] consonateFinal1 = new string[]
     {
-    "a c t",
-    "t a ct",
-    "t a sk",
+    "d u s k",
+    "t u s k",
+    "t a s k",
     "a s k",
-    "m a sk",
-    "m a st",
-    "l a st",
-    "l o st",
-    "c o st",
-    "c a st",
+    "m a s k",
+    "m a s t",
+    "l a s t",
+    "l o s t",
+    "c o s t",
+    "c a s t"
     };
 
     [HideInInspector]
-    public string[] fConsonate2 = new string[]
+    public string[] consonateFinal2 = new string[]
     {
-    "r en t",
-    "b en t",
-    "b en ch",
-    "b el ch",
-    "b el t",
-    "b es t",
-    "r es t",
-    "ch es t",
-    "b es t",
-    "b en t",
+    "r e n t",
+    "b e n t",
+    "b e n ch",
+    "b e l ch",
+    "b e l t",
+    "b e s t",
+    "r e s t",
+    "ch e s t",
+    "b e s t",
+    "b e n t",
     };
 
     [HideInInspector]
-    public string[] fConsonate3 = new string[]
+    public string[] consonateFinal3 = new string[]
     {
-    "l if t",
-    "l in t",
-    "h in t",
-    "m in t",
-    "m is t",
+    "l i f t",
+    "l i n t",
+    "h i n t",
+    "m i n t",
+    "m i s t",
     "m i t",
     "m i d",
-    "m in d",
-    "b in d",
-    "b i n",
+    "m i n d",
+    "b i n d",
+    "b i n ",
     };
 
     [HideInInspector]
-    public string[] fConsonate4 = new string[]
+    public string[] consonateFinal4 = new string[]
     {
-    "b en t",
-    "t en t",
-    "t es t",
-    "t ex t",
-    "n ex t",
-    "n es t",
-    "w es t",
-    "w en t",
-    "w ep t",
-    "k ep t",
+    "b e n t",
+    "t e n t",
+    "t e s t",
+    "t e x t",
+    "n e x t",
+    "n e s t",
+    "w e s t",
+    "w e n t",
+    "w e p t",
+    "k e p t",
     };
 
     [HideInInspector]
-    public string[] fConsonate5 = new string[]
+    public string[] consonateFinal5 = new string[]
     {
-    "b un ch",
+    "b u n ch",
     "b u n",
     "b u ck",
     "b u zz",
     "b u d",
     "b u b",
-    "b u lb",
-    "b u lk",
-    "s u lk",
-    "s i lk",
+    "b u l b",
+    "b u l k",
+    "s u l k",
+    "s i l k",
     };
 
     [HideInInspector]
-    public string[] fConsonate6 = new string[]
+    public string[] consonateFinal6 = new string[]
     {
-    "r a nt",
-    "p a nt",
+    "r a n t",
+    "p a n t",
     "a n t",
     "a c t",
-    "f a ct",
-    "f a st",
-    "f i st",
-    "l i st",
-    "l i ft",
-    "l e ft",
+    "f a c t",
+    "f a s t",
+    "f i s t",
+    "l i s t",
+    "l i f t",
+    "l e f t",
     };
 
     [HideInInspector]
-    public string[] fConsonate7 = new string[]
+    public string[] consonateFinal7 = new string[]
     {
-    "t a sk",
+    "t a s k",
     "a s k",
-    "ma sk",
-    "m as t",
-    "m is t",
-    "li s t",
-    "li f t",
-    "li n t",
-    "mi n t",
-    "hi n t",
+    "m a s k",
+    "m a s t",
+    "m i s t",
+    "l i s t",
+    "l i f t",
+    "l i n t",
+    "m i n t",
+    "h i n t",
     };
 
     [HideInInspector]
-    public string[] fConsonate8 = new string[]
+    public string[] consonateFinal8 = new string[]
     {
-    "c ol d",
-    "c ol t",
-    "m ol t",
-    "m ol d",
+    "c o l d",
+    "c o l t",
+    "m o l t",
+    "m o l d",
     "o l d",
-    "g ol d",
-    "h ol d",
-    "h el d",
-    "h el p",
-    "k el p",
+    "g o l d",
+    "h o l d",
+    "h e l d",
+    "h e l p",
+    "k e l p",
     };
 
     [HideInInspector]
-    public string[] fConsonate9 = new string[]
+    public string[] consonateFinal9 = new string[]
     {
-    "w is p",
-    "l is p",
-    "l is t",
-    "l as t",
-    "f as t",
-    "c as t",
-    "p as t",
-    "p es t",
-    "p el t",
-    "f el t",
+    "w i s p",
+    "l i s p",
+    "l i s t",
+    "l a s t",
+    "f a s t",
+    "c a s t",
+    "p a s t",
+    "p e s t",
+    "p e l t",
+    "f e l t",
     };
 
     [HideInInspector]
-    public string[] fConsonate10 = new string[]
+    public string[] consonateFinal10 = new string[]
     {
-    "m il k",
-    "s il k",
-    "s il t",
-    "s if t",
-    "l if t",
-    "l ef t",
-    "l of t",
-    "l os t",
-    "c os t",
-    "c as t",
+    "m i l k",
+    "s i l k",
+    "s i l t",
+    "s i f t",
+    "l i f t",
+    "l e f t",
+    "l o f t",
+    "l o s t",
+    "c o s t",
+    "c a s t",
+    };
+    [HideInInspector]
+    public string[] consonateBlend1 = new string[]
+    {
+    "c l a s p",
+    "c l a m p",
+    "l a m p",
+    "r a m p",
+    "c r a m p",
+    "c r a m",
+    "c r a ck",
+    "t r a ck",
+    "t r i ck",
+    "b r i ck"
     };
 
     [HideInInspector]
-    public string[] bConsonate1 = new string[]
+    public string[] consonateBlend2 = new string[]
     {
-    "gr a sp",
-    "cl a sp",
-    "cl a mp",
-    "l a mp",
-    "r a mp",
-    "cr a mp",
-    "cr a m",
-    "cr a ck",
-    "tr a ck",
-    "tr a ct",
+    "b l ank",
+    "b ank",
+    "b unk",
+    "s unk",
+    "s t unk",
+    "s t ink",
+    "s ink",
+    "r ink",
+    "d r ink",
+    "sh r ink",
     };
 
     [HideInInspector]
-    public string[] bConsonate2 = new string[]
+    public string[] consonateBlend3 = new string[]
     {
-    "bl an k",
-    "b an k",
-    "b un k",
-    "s un k",
-    "st un k",
-    "st in k",
-    "s in k",
-    "r in k",
-    "dr in k",
-    "shr in k",
+    "b ank",
+    "b l ank",
+    "c l ank",
+    "c r ank",
+    "r ank",
+    "s ank",
+    "s t ank",
+    "t ank",
+    "r ank",
+    "f r ank",
     };
 
     [HideInInspector]
-    public string[] bConsonate3 = new string[]
+    public string[] consonateBlend4 = new string[]
     {
-    "pl a n",
-    "cl a n",
-    "cl a ng",
-    "sl a ng",
-    "s a ng",
-    "s a nk",
-    "st a nk",
-    "t a nk",
-    "r a nk",
-    "fr a nk",
+    "f l unk",
+    "f l ung",
+    "f l ing",
+    "c l ing",
+    "s l ing",
+    "s l ink",
+    "s t ink",
+    "s t ing",
+    "s t r ing",
+    "s t r ong",
     };
 
     [HideInInspector]
-    public string[] bConsonate4 = new string[]
+    public string[] consonateBlend5 = new string[]
     {
-    "fl u nk",
-    "fl u ng",
-    "fl i ng",
-    "cl i ng",
-    "sl i ng",
-    "sl i nk",
-    "st i nk",
-    "st i ng",
-    "str i ng",
-    "str o ng",
-    };
-
-    [HideInInspector]
-    public string[] bConsonate5 = new string[]
-    {
-    "str u ck",
-    "tr u ck",
+    "s t r u ck",
+    "t r u ck",
     "t u ck",
     "p u ck",
-    "pl u ck",
-    "pl u g",
-    "sl u g",
-    "sl u ng",
-    "l u ng",
-    "h u ng",
+    "p l u ck",
+    "p l u g",
+    "s l u g",
+    "s l u m",
+    "s l u m p",
+    "c l u m p",
     };
 
     [HideInInspector]
-    public string[] bConsonate6 = new string[]
+    public string[] consonateBlend6 = new string[]
     {
     "l a sh",
-    "sl a sh",
-    "spl a sh",
-    "sl a sh",
-    "cl a sh",
-    "cl a sp",
-    "gr a sp",
-    "gr a ss",
-    "cr a ss",
-    "cl a ss",
+    "s l a sh",
+    "s p l a sh",
+    " s l a sh",
+    "c l a sh",
+    "c l a s p",
+    "g r a s p",
+    "g r a s s",
+    "c r a s s",
+    "c l a s s",
     };
 
     [HideInInspector]
-    public string[] bConsonate7 = new string[]
+    public string[] consonateBlend7 = new string[]
     {
-    "spl a t",
-    "sl a t",
-    "sc a t",
-    "sc a m",
-    "sc a mp",
-    "st a mp",
-    "st a nd",
-    "str a nd",
-    "st a nd",
-    "s a nd",
+    "s p l a t",
+    "s l a t",
+    "s c a t",
+    "s c a n",
+    "c a n",
+    "b a n",
+    "b a n d",
+    "s a n d",
+    "s t a n d",
+    "s t r a n d",
     };
 
     [HideInInspector]
-    public string[] bConsonate8 = new string[]
+    public string[] consonateBlend8 = new string[]
     {
-    "spl a t",
-    "sl a t",
-    "sl a sh",
-    "sl u sh",
-    "fl u sh",
-    "fl a sh",
-    "cl a sh",
-    "cr a sh",
-    "cr a ck",
-    "cr o ck",
+    "s p l a t",
+    "s l a t",
+    "s l a sh",
+    "s l u sh",
+    "f l u sh",
+    "f l a sh",
+    "c l a sh",
+    "c r a sh",
+    "c r a ck",
+    "c r o ck",
     };
 
     [HideInInspector]
-    public string[] bConsonate9 = new string[]
+    public string[] consonateBlend9 = new string[]
     {
-    "str i p",
-    "str a p",
-    "tr a p",
+    "s t r i p",
+    "s t r a p",
+    "t r a p",
     "r a p",
     "r i p",
-    "tr i p",
-    "tr a p",
-    "tr a sh",
-    "tr a ck",
+    "t r i p",
+    "t r a p",
+    "t r a sh",
+    "t r a ck",
     "r a ck",
     };
 
     [HideInInspector]
-    public string[] bConsonate10 = new string[]
+    public string[] consonateBlend10 = new string[]
     {
-    "b i nd",
-    "bl i nd",
-    "bl o nd",
-    "bl e nd",
-    "l e nd",
-    "s e nd",
-    "s e nt",
-    "sp e nt",
-    "p e nt",
-    "p e nd",
+    "b i n d",
+    "b l i n d",
+    "b l o n d",
+    "b l e n d",
+    "l e n d",
+    "s e n d",
+    "s e n t",
+    "s p e n t",
+    "p e n t",
+    "p e n d",
     };
-
     [HideInInspector]
     public string[] syllables1 = new string[]
-    {
+{
     "sh e d",
-    "sh e",
+    "sh e  ",
     "b e",
     "b e d",
     "b i d",
     "h i d",
-    "h i",
+    "h i  ",
     "h i m",
     "h i t",
     "s i t",
-    };
+};
 
     [HideInInspector]
     public string[] syllables2 = new string[]
     {
     "g o t",
-    "g o",
+    "g o ",
     "g o sh",
     "n o sh",
-    "n o",
+    "n o ",
     "n o t",
     "p o t",
     "p e t",
     "w e t",
-    "w e",
+    "w e ",
     };
 
     [HideInInspector]
@@ -998,16 +979,16 @@ public class WordTrails : MonoBehaviour
     [HideInInspector]
     public string[] syllables4 = new string[]
     {
-    "s h e",
+    "sh e",
     "sh e d",
-    "b e d",
-    "b e",
+    "b ed",
+    "b e ",
     "b e t",
     "m e t",
-    "m e",
+    " m e",
     "m e n",
     "h e n",
-    "h e",
+    "h e ",
     };
 
     [HideInInspector]
@@ -1016,25 +997,25 @@ public class WordTrails : MonoBehaviour
     "s o",
     "s o b",
     "g o b",
-    "g o",
+    "g o ",
     "g e t",
     "w e t",
-    "w e",
+    "w e ",
     "w e d",
     "b e d",
-    "b e",
+    "b e ",
     };
 
     [HideInInspector]
     public string[] syllables6 = new string[]
     {
     "n o t",
-    "n o",
+    "n o ",
     "n o d",
     "b o d",
     "b e d",
-    "b e",
-    "s h e",
+    " b e",
+    "sh e",
     "sh e d",
     "r e d",
     "l e d",
@@ -1044,14 +1025,14 @@ public class WordTrails : MonoBehaviour
     public string[] syllables7 = new string[]
     {
     "m e t",
-    "m e",
+    "m e ",
     "w e",
     "w e t",
     "g e t",
     "n e t",
     "n o t",
-    "n o",
-    "g o",
+    "n o  ",
+    "g o ",
     "g o t",
     };
 
@@ -1062,7 +1043,7 @@ public class WordTrails : MonoBehaviour
     "g o",
     "g o b",
     "s o b",
-    "s o",
+    "s o ",
     "n o",
     "n o d",
     "g o d",
@@ -1074,11 +1055,11 @@ public class WordTrails : MonoBehaviour
     public string[] syllables9 = new string[]
     {
     "m e t",
-    "m e",
+    "m e ",
     "m e n",
     "h e n",
     "h e",
-    "b e",
+    "b e ",
     "b e t",
     "b i t",
     "h i t",
@@ -1090,288 +1071,286 @@ public class WordTrails : MonoBehaviour
     {
     "b e",
     "b y",
-    "s h y",
-    "s h e",
+    "sh y",
+    "sh e  ",
     "sh e d",
-    "b e d",
+    "b e d ",
     "b e",
     "b y",
-    "w h y",
+    "wh y",
     "m y",
     };
-
     [HideInInspector]
-    public string[] silent1 = new string[]
+    public string[] silentE1 = new string[]
     {
     "t a p",
-    "t a pe",
-    "c a pe",
-    "c a p",
+    "t a p e",
+    "c a p e",
+    "c a p ",
     "cl a p",
-    "cl i p",
+    "c l i p",
     "l i p",
     "s i p",
     "s i t",
-    "s i te",
+    "s i t e",
     };
 
     [HideInInspector]
-    public string[] silent2 = new string[]
+    public string[] silentE2 = new string[]
     {
-    "k i te",
-    "k i t",
+    "k i t e",
+    "k i t ",
     "f i t",
     "b i t",
-    "b i te",
-    "s i te",
-    "qu i te",
-    "qu i t",
+    "b i t e",
+    "s i t e",
+    "qu i t e",
+    "qu i t ",
     "qu i z",
     "b i z",
     };
 
     [HideInInspector]
-    public string[] silent3 = new string[]
+    public string[] silentE3 = new string[]
     {
-    "p i ne",
-    "p i n",
+    "p i n e",
+    "p i n ",
     "f i n",
-    "f i ne",
-    "l i ne",
-    "l i ke",
-    "b i ke",
-    "p i ke",
-    "p i le",
-    "p i ll",
+    "f i n e",
+    "l i n e",
+    "l i k e",
+    "b i k e",
+    "p i k e",
+    "p i l e",
+    "m i l e",
     };
 
     [HideInInspector]
-    public string[] silent4 = new string[]
+    public string[] silentE4 = new string[]
     {
-    "c a ke",
-    "l a ke",
-    "l a te",
-    "m a te",
-    "m a le",
-    "m o le",
-    "m i le",
+    "c a k e",
+    "l a k e",
+    "l a t e",
+    "m a t e",
+    "m a l e",
+    "m o l e",
+    "m i l e",
     "m i ll",
     "p i ll",
     "f i ll",
     };
 
     [HideInInspector]
-    public string[] silent5 = new string[]
+    public string[] silentE5 = new string[]
     {
-    "m a de",
-    "f a de",
-    "f a ke",
-    "l a ke",
-    "l i ke",
-    "p i ke",
-    "p i ne",
-    "f i ne",
-    "f i n",
-    "f i nd",
+    "m a d e",
+    "f a d e",
+    "f a k e",
+    "l a k e",
+    "l i k e",
+    "p i k e",
+    "p i n e",
+    "f i n e",
+    "f i n ",
+    "f i n d",
     };
 
     [HideInInspector]
-    public string[] silent6 = new string[]
+    public string[] silentE6 = new string[]
     {
     "c a p",
-    "c a pe",
-    "c a ne",
-    "c a n",
+    "c a p e",
+    "c a n e",
+    "c a n ",
     "m a n",
-    "m a ne",
-    "l a ne",
-    "l a ke",
-    "l a me",
-    "s a me",
+    "m a n e",
+    "l a n e",
+    "l a k e",
+    "l a m e",
+    "s a m e",
     };
 
     [HideInInspector]
-    public string[] silent7 = new string[]
+    public string[] silentE7 = new string[]
     {
     "f a n",
-    "c a n",
-    "c a ne",
-    "c a me",
-    "s a me",
-    "s a ve",
-    "w a ve",
-    "p a ve",
-    "p a le",
-    "p a l",
+    "c a n ",
+    "c a n e",
+    "c a m e",
+    "s a m e",
+    "s a v e",
+    "w a v e",
+    "p a v e",
+    "p a l e",
+    "p a l ",
     };
 
     [HideInInspector]
-    public string[] silent8 = new string[]
+    public string[] silentE8 = new string[]
     {
     "i c e",
-    "d i ce",
-    "d i me",
-    "d o me",
-    "h o me",
-    "h o le",
-    "p o le",
-    "m o le",
-    "m o de",
-    "m a de", // You have 'mode' twice, is this intentional?
+    "d i c e",
+    "d i m e",
+    "d o m e",
+    "h o m e",
+    "h o l e",
+    "p o l e",
+    "m o l e",
+    "m o d e",
+    "m o p e",
     };
 
     [HideInInspector]
-    public string[] silent9 = new string[]
+    public string[] silentE9 = new string[]
     {
-    "r i ce",
-    "n i ce",
+    "r i c e",
+    "n i c e",
     "i c e",
     "a c e",
-    "r a ce",
-    "r a ke",
-    "t a ke",
-    "t a le",
-    "s a le",
+    "r a c e",
+    "r a k e",
+    "t a k e",
+    "t a l e",
+    "s a l e",
     "k a le",
     };
 
     [HideInInspector]
-    public string[] silent10 = new string[]
+    public string[] silentE10 = new string[]
     {
-    "c a ge",
-    "a ge",
-    "p a ge",
-    "p a ce",
-    "pl a ce",
-    "l a ce",
-    "l a ke",
-    "f a ke",
-    "f a ce",
-    "f a ct",
+    "c a g e",
+    "a g e",
+    "p a g e",
+    "p a c e",
+    "p l a c e",
+    "l a c e",
+    "l a k e",
+    "f a k e",
+    "f a c e",
+    "f a c t",
+    };
+    [HideInInspector]
+    public string[] bossyR1 = new string[]
+    {
+    "b ar",
+    "c ar",
+    "c ar t",
+    "ar t",
+    "m ar t",
+    "t ar t",
+    "s t ar t",
+    "s t ar ",
+    "s t ir",
+    "s ir",
     };
 
     [HideInInspector]
-    public string[] bossy1 = new string[]
+    public string[] bossyR2 = new string[]
     {
-    "c a r",
-    "c a rt",
-    "c a t",
-    "m a t",
-    "m a rt",
-    "t a rt",
-    "st a rt",
-    "st a r",
-    "st i r",
-    "s i r",
+    "y ur t",
+    "c ur t",
+    "c ur l",
+    "c ur b",
+    "c ar b",
+    "c ar ",
+    "f ar",
+    "f ar m",
+    "h ar m",
+    "h ar d",
     };
 
     [HideInInspector]
-    public string[] bossy2 = new string[]
+    public string[] bossyR3 = new string[]
     {
-    "y u rt",
-    "c u rt",
-    "c u rl",
-    "c u rb",
-    "c a rb",
-    "c a r",
-    "f a r",
-    "f a rm",
-    "h a rm",
-    "h a rd",
+    "m ar k",
+    "p ar k",
+    "l ar k",
+    "l ur k",
+    "l ur ch",
+    "ch ur ch",
+    "ch ur n",
+    "t ur n",
+    "t ur f",
+    "s ur f",
     };
 
     [HideInInspector]
-    public string[] bossy3 = new string[]
+    public string[] bossyR4 = new string[]
     {
-    "m a rk",
-    "p a rk",
-    "l a rk",
-    "l u rk",
-    "l u rch",
-    "ch u rch",
-    "ch u rn",
-    "t u rn",
-    "t u rf",
-    "s u rf",
+    "b ur p",
+    "b ur n",
+    "b ar n",
+    "b ar ",
+    "b ar k",
+    "p ar k",
+    "p ar ",
+    "f ar",
+    "f ar m",
+    "h ar m",
     };
 
     [HideInInspector]
-    public string[] bossy4 = new string[]
+    public string[] bossyR5 = new string[]
     {
-    "b u rp",
-    "b u rn",
-    "b a rn",
-    "b a r",
-    "b a rk",
-    "p a rk",
-    "p a r",
-    "f a r",
-    "f a rm",
-    "h a rm",
+    "th or n",
+    "b or n",
+    "b ar n",
+    "b ar ",
+    "b ar f",
+    "b ar d",
+    "h ar d",
+    "c ar d",
+    "c ar b",
+    "b ar b",
     };
 
     [HideInInspector]
-    public string[] bossy5 = new string[]
+    public string[] bossyR6 = new string[]
     {
-    "th o rn",
-    "b o rn",
-    "b a rn",
-    "b a r",
-    "b a n",
-    "b a nd",
-    "h a nd",
-    "h a rd",
-    "c a rd",
-    "c a rb",
-    };
-
-    [HideInInspector]
-    public string[] bossy6 = new string[]
-    {
-    "th i rd",
-    "b i rd",
-    "b i d",
-    "l i d",
-    "l a d",
-    "l a rd",
-    "h a rd",
-    "h e rd",
-    "h e r",
+    "th ir d",
+    "b ir d",
+    "b ir th",
+    "b a th",
+    "b a d",
+    "h a d",
+    "h ar d",
+    "h er d",
+    "h er ",
     "h e",
     };
 
     [HideInInspector]
-    public string[] bossy7 = new string[]
+    public string[] bossyR7 = new string[]
     {
-    "c a r",
-    "f a r",
-    "f o r",
-    "f o rm",
-    "n o rm",
-    "n o r",
-    "f o r",
-    "f o rk",
-    "c o rk",
-    "c o rn",
+    "c ar",
+    "f ar",
+    "f or",
+    "f or m",
+    "n or m",
+    "n or ",
+    "f or",
+    "f or k",
+    "c or k",
+    "c or n",
     };
 
     [HideInInspector]
-    public string[] bossy8 = new string[]
+    public string[] bossyR8 = new string[]
     {
-    "s u rf",
-    "t u rf",
-    "t u rn",
-    "b u rn",
-    "b o rn",
-    "c o rn",
-    "c o rk",
-    "p o rk",
-    "p o rt",
-    "s o rt",
+    "s ur f",
+    "t ur f",
+    "t ur n",
+    "b ur n",
+    "b or n",
+    "c or n",
+    "c or k",
+    "p or k",
+    "p or t",
+    "s or t",
     };
 
     [HideInInspector]
-    public string[] bossy9 = new string[]
+    public string[] bossyR9 = new string[]
     {
     "b ar n",
     "b ar k",
@@ -1379,32 +1358,31 @@ public class WordTrails : MonoBehaviour
     "p ar t",
     "p or t",
     "f or t",
-    "f o r",
+    "f or ",
     "f or k",
     "c or k",
     "c or d",
     };
 
     [HideInInspector]
-    public string[] bossy10 = new string[]
+    public string[] bossyR10 = new string[]
     {
     "m ar k",
     "m ar t",
     "t ar t",
-    "st ar t",
-    "st ar",
-    "t a r",
+    "s t ar t",
+    "s t ar ",
+    "t ar ",
     "t ar p",
     "h ar p",
     "h ar m",
     "f ar m",
     };
-
     [HideInInspector]
-    public string[] long1 = new string[]
+    public string[] vowel1 = new string[]
     {
-    "b e e",
-    "s e e",
+    "b ee",
+    "s ee",
     "s ee n",
     "s ee d",
     "n ee d",
@@ -1416,12 +1394,12 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] long2 = new string[]
+    public string[] vowel2 = new string[]
     {
-    "s e a",
-    "t e a",
+    "s ea",
+    "t ea",
     "t ea m",
-    "st ea m",
+    "s t ea m",
     "s ea m",
     "s ea t",
     "h ea t",
@@ -1431,7 +1409,7 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] long3 = new string[]
+    public string[] vowel3 = new string[]
     {
     "m ai d",
     "p ai d",
@@ -1446,43 +1424,43 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] long4 = new string[]
+    public string[] vowel4 = new string[]
     {
-    "d a y",
-    "h a y",
-    "s a y",
-    "sw a y",
-    "st a y",
-    "s a y",
-    "p a y",
-    "l a y",
-    "pl a y",
-    "cl a y",
+    "d ay",
+    "h ay",
+    "s ay",
+    "s w ay",
+    "s t ay",
+    "s ay",
+    "p ay",
+    "l ay",
+    "p l ay",
+    "c l ay",
     };
 
     [HideInInspector]
-    public string[] long5 = new string[]
+    public string[] vowel5 = new string[]
     {
-    "h i gh",
-    "s i gh",
-    "si gh t",
-    "fi gh t",
-    "fli gh t",
-    "li gh t",
-    "mi gh t",
-    "ni gh t",
-    "ri gh t",
-    "ti gh t",
+    "h igh",
+    "s igh",
+    "s igh t",
+    "s i t",
+    "f i t",
+    "f igh t",
+    "l igh t",
+    "f l igh t",
+    "f l ee t",
+    "f ee t",
     };
 
     [HideInInspector]
-    public string[] long6 = new string[]
+    public string[] vowel6 = new string[]
     {
     "b oa t",
-    "o a t",
+    "oa t",
     "c oa t",
-    "c oa st",
-    "b oa st",
+    "c oa s t",
+    "b oa s t",
     "b oa t",
     "g oa t",
     "g oa l",
@@ -1491,22 +1469,22 @@ public class WordTrails : MonoBehaviour
     };
 
     [HideInInspector]
-    public string[] long7 = new string[]
+    public string[] vowel7 = new string[]
     {
-    "t o e",
-    "t o w",
-    "b o w",
-    "l o w",
-    "sl o w",
-    "s o w",
-    "b o w",
-    "r o w",
-    "sh o w",
-    "sh o wn",
+    "t oe",
+    "t ow",
+    "l ow",
+    "s l ow",
+    "b l ow",
+    "b ow",
+    "r ow",
+    "sh ow",
+    "sh ow n",
+    "t ow n",
     };
 
     [HideInInspector]
-    public string[] long8 = new string[]
+    public string[] vowel8 = new string[]
     {
     "s oo n",
     "m oo n",
@@ -1515,66 +1493,65 @@ public class WordTrails : MonoBehaviour
     "f oo l",
     "p oo l",
     "t oo l",
-    "st oo l",
-    "st ee l",
-    "st ee p",
+    "s t oo l",
+    "s t ee l",
+    "s t ee p",
     };
 
     [HideInInspector]
-    public string[] long9 = new string[]
+    public string[] vowel9 = new string[]
     {
     "s oo n",
-    "sp oo n",
-    "sp oo k",
-    "sp oo l",
+    "s p oo n",
+    "s p oo k",
+    "s p oo l",
     "p oo l",
     "t oo l",
     "t ai l",
     "n ai l",
-    "sn ai l",
+    "s n ai l",
     "s ai l",
     };
 
     [HideInInspector]
-    public string[] long10 = new string[]
+    public string[] vowel10 = new string[]
     {
-    "dr e w",
-    "d e w",
-    "f e w",
-    "fl e w",
-    "bl e w",
-    "bl u e",
+    "d r ew",
+    "d ew",
+    "f ew",
+    "f l ew",
+    "b l ew",
+    "b l ue",
     "c l ue",
     "c l ay",
-    "pl a y",
-    "p a y",
+    "p l ay",
+    "p ay",
     };
-
     [HideInInspector]
     public string[] tricky1 = new string[]
     {
     "sh oo t",
     "sh ou t",
-    "o u t",
+    "ou t",
     "p ou t",
     "t ou t",
     "l ou t",
     "g ou t",
-    "gr ou t",
-    "tr ou t",
-    "tr ea t",
+    "g r ou t",
+    "t r ou t",
+    "t r ea t",
     };
 
     [HideInInspector]
     public string[] tricky2 = new string[]
     {
-    "sh oo k",
     "c oo k",
-    "n oo k",
-    "l oo k",
+    "c oo l",
+    "t oo l",
+    "t oo k",
     "r oo k",
-    "cr oo k",
-    "br oo k",
+    "c r oo k",
+    "b r oo k",
     "b oo k",
     "b ee k",
     "s ee k",
@@ -1583,14 +1560,14 @@ public class WordTrails : MonoBehaviour
     [HideInInspector]
     public string[] tricky3 = new string[]
     {
-    "po in t",
-    "jo in t",
-    "jo i n",
-    "co i n",
-    "co i l",
-    "o i l",
-    "fo i l",
-    "fo o l",
+    "p oi n t",
+    "j oi n t",
+    "j oi n",
+    "c oi n",
+    "c oi l",
+    "oi l",
+    "f oi l",
+    "f oo l",
     "f ue l",
     "d ue l",
     };
@@ -1601,38 +1578,38 @@ public class WordTrails : MonoBehaviour
     "t ow n",
     "g ow n",
     "d ow n",
-    "dr ow n",
-    "fr ow n",
-    "cr ow n",
-    "cl ow n",
-    "cr ow n",
-    "cr ow",
-    "gr o w",
+    "d r ow n",
+    "f r ow n",
+    "c r ow n",
+    "c l ow n",
+    "c r ow n",
+    "c r ow",
+    "g r ow",
     };
 
     [HideInInspector]
     public string[] tricky5 = new string[]
     {
-    "ro un d",
-    "bo un d",
-    "mo un d",
-    "fo un d",
-    "so un d",
-    "ro un d",
-    "ho un d",
-    "wo un d",
-    "p oun d",
-    "p on d",
+    "m ou n t",
+    "m ou n d",
+    "b ou n d",
+    "b o n d",
+    "f o n d",
+    "f ou n d",
+    "s ou n d",
+    "w ou n d",
+    "p ou n d",
+    "p o n d",
     };
 
     [HideInInspector]
     public string[] tricky6 = new string[]
     {
-    "b o y",
-    "j o y",
-    "s o y",
-    "t o y",
-    "t e e",
+    "b oy",
+    "j oy",
+    "s oy",
+    "t oy",
+    "t ee",
     "t ee th",
     "t oo th",
     "b oo th",
@@ -1643,16 +1620,16 @@ public class WordTrails : MonoBehaviour
     [HideInInspector]
     public string[] tricky7 = new string[]
     {
-    "cl a w",
-    "l a w",
-    "sl a w",
-    "s a w",
-    "j a w",
-    "p a w",
+    "c l aw",
+    "l aw",
+    "s l aw",
+    "s aw",
+    "j aw",
+    "p aw",
     "p aw n",
     "l aw n",
-    "l a w",
-    "fl a w",
+    "l aw",
+    "f l aw",
     };
 
     [HideInInspector]
@@ -1661,11 +1638,11 @@ public class WordTrails : MonoBehaviour
     "h oo d",
     "h ea d",
     "b ea d",
-    "br ea d",
+    "b r ea d",
     "r ea d",
     "r ea l",
     "r ai l",
-    "tr ai l",
+    "t r ai l",
     "t ai l",
     "t oo l",
     };
@@ -1674,15 +1651,15 @@ public class WordTrails : MonoBehaviour
     public string[] tricky9 = new string[]
     {
     "s ea l",
-    "st ea l",
+    "s t ea l",
     "t ea l",
     "v ea l",
     "v ei l",
     "v ei n",
     "r ei n",
     "r ai n",
-    "gr ai n",
-    "gr oa n",
+    "g r ai n",
+    "g r oa n",
     };
 
     [HideInInspector]
@@ -1691,13 +1668,15 @@ public class WordTrails : MonoBehaviour
     "m ou th",
     "s ou th",
     "s ou r",
-    "o u r",
-    "o u t",
+    "ou r",
+    "ou t",
     "b ou t",
     "b oo t",
     "f oo t",
     "f oo d",
     "g oo d",
     };
+
+
 
 }

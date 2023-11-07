@@ -124,6 +124,7 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
                 GameObject tmp = Instantiate(this.gameObject);
                 tmp.transform.SetParent(this.transform.parent);
                 tmp.transform.position = this.transform.position;
+                tmp.transform.localScale = new Vector3(1, 1, 1);
                 tmp.transform.SetParent(this.transform.parent.parent);
                 tmp.gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
                 tmp.gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);

@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     public static string isSubbed="no";
     public static DateTime subEnds = DateTime.Now;
 
+    public bool wordPadding = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -122,17 +124,47 @@ public class GameManager : MonoBehaviour
         }
 
         string[] uniqueChars = trail.SelectMany(word => word.ToCharArray()).Distinct().Select(c => c.ToString()).ToArray();
-        string[] gameAlpha = this.GetComponent<WordTrails>().alphabet;
-        foreach (string ch in uniqueChars)
+        //string[] gameAlpha = this.GetComponent<WordTrails>().alphabet;
+        List<String> gameAlpha = new List<String>();
+        //gameAlpha.AddRange(this.GetComponent<WordTrails>().alphabet);
+        for (int i=0; i<= trail.Length - 1; i++)
         {
-            gameAlpha.Append(ch);
+            String[] options = trail[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            gameAlpha.AddRange(options);
+        }
+        foreach (string ch in trail)
+        {
+            //gameAlpha.Add(ch);
+        }
+
+        if (currentWord.Length < answerCharas.Length)
+        {
+            GameObject tmp = Instantiate(prefabLetter);
+            tmp.transform.SetParent(workSpace.transform);
+            tmp.transform.localScale = new Vector3(1, 1, 1);
+            tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = " ";
+            tmp.transform.GetComponent<ClickDrag>().enabled = false;
+            tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
+            tmp.transform.GetChild(1).gameObject.SetActive(true);
         }
 
         for (int i = 0; i <= currentWord.Length - 1; i++)
         {
             GameObject tmp = Instantiate(prefabLetter);
             tmp.transform.SetParent(workSpace.transform);
+            tmp.transform.localScale = new Vector3(1, 1, 1);
             tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentWord[i].ToString();
+            tmp.transform.GetComponent<ClickDrag>().enabled = false;
+            tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
+            tmp.transform.GetChild(1).gameObject.SetActive(true);
+        }
+
+        if (currentWord.Length < answerCharas.Length)
+        {
+            GameObject tmp = Instantiate(prefabLetter);
+            tmp.transform.SetParent(workSpace.transform);
+            tmp.transform.localScale = new Vector3(1, 1, 1);
+            tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = " ";
             tmp.transform.GetComponent<ClickDrag>().enabled = false;
             tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
             tmp.transform.GetChild(1).gameObject.SetActive(true);
@@ -146,7 +178,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i <= diff - 1; i++)
         {
             if (i == rnd) { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentMix; }
-            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gameAlpha[UnityEngine.Random.Range(0, gameAlpha.Length - 1)]; }
+            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gameAlpha[UnityEngine.Random.Range(0, gameAlpha.Count - 1)]; }
             mixSpace[i].GetComponent<ClickDrag>().enabled = false;
             mixSpace[i].GetComponent<ClickDrag>().isDragging = false;
             mixSpace[i].GetComponent<ClickDrag>().canvasGroup.blocksRaycasts = true;

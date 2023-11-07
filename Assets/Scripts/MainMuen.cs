@@ -85,7 +85,7 @@ public class MainMuen : MonoBehaviour
                             unit = " ";
                             chapter = "CVC Words";
                         }
-                        if (name.Contains("digraph"))
+                        if (name.Contains("diagraph"))
                         {
                             unit = " ";
                             chapter = "CVC Words Including Digraphs";
@@ -95,17 +95,17 @@ public class MainMuen : MonoBehaviour
                             unit = " ";
                             chapter = "FLOSS Words";
                         }
-                        if (name.Contains("iCons"))
+                        if (name.Contains("consonateInit"))
                         {
                             unit = " ";
                             chapter = "Initial Consonant Blends";
                         }
-                        if (name.Contains("fCons"))
+                        if (name.Contains("consonateFinal"))
                         {
                             unit = " ";
                             chapter = "Final Consonat Blends";
                         }
-                        if (name.Contains("bCons"))
+                        if (name.Contains("consonateBlend"))
                         {
                             unit = " ";
                             chapter = "Initial and Final Consonat Blends";
@@ -115,17 +115,17 @@ public class MainMuen : MonoBehaviour
                             unit = " ";
                             chapter = "Open & Closed Syllables";
                         }
-                        if (name.Contains("silent"))
+                        if (name.Contains("silentE"))
                         {
                             unit = " ";
                             chapter = "Silent e";
                         }
-                        if (name.Contains("bossy"))
+                        if (name.Contains("bossyR"))
                         {
                             unit = " ";
                             chapter = "Bossy r";
                         }
-                        if (name.Contains("long"))
+                        if (name.Contains("vowel"))
                         {
                             unit = " ";
                             chapter = "Long Vowel Teams";

@@ -8,6 +8,11 @@ public class MenuButton : MonoBehaviour
     public string chapter = "";
     public string level = "";
 
+    private void Start()
+    {
+        transform.localScale = new Vector3(1, 1, 1);
+    }
+
     public void Unlock()
     {
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = unit;
