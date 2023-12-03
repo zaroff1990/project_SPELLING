@@ -103,12 +103,12 @@ public class MainMuen : MonoBehaviour
                         if (name.Contains("consonateFinal"))
                         {
                             unit = " ";
-                            chapter = "Final Consonat Blends";
+                            chapter = "Final Consonant Blends";
                         }
                         if (name.Contains("consonateBlend"))
                         {
                             unit = " ";
-                            chapter = "Initial and Final Consonat Blends";
+                            chapter = "Initial and Final Consonant Blends";
                         }
                         if (name.Contains("syllables"))
                         {

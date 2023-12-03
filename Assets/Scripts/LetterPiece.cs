@@ -8,6 +8,7 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
 {
     public RectTransform rectTransform1; // Assign the first RectTransform in the inspector
     public RectTransform rectTransform2; // Assign the second RectTransform in the inspector
+    public RectTransform rectTransform3;
     private Canvas canvas;
     public GameObject letter;
 
@@ -67,7 +68,8 @@ public class LetterPiece : MonoBehaviour, IPointerDownHandler
                     rectTransform2.gameObject.GetComponent<ClickDrag>().isDragging = false;
                     rectTransform2.gameObject.GetComponent<ClickDrag>().canvasGroup.blocksRaycasts = true;
                     GameManager.instance.heldLetter = null;
-                    rectTransform2.anchoredPosition = rectTransform2.gameObject.GetComponent<LetterPiece>().startingPos;
+                    //rectTransform2.anchoredPosition = rectTransform2.gameObject.GetComponent<LetterPiece>().startingPos;
+                    GameManager.instance.LetterChanged();
                 }
             }
             if (!letter.GetComponent<Animator>().enabled && answerSpace)letter.GetComponent<Animator>().enabled = true;

@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = " ";
             tmp.transform.GetComponent<ClickDrag>().enabled = false;
             tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
-            tmp.transform.GetChild(1).gameObject.SetActive(true);
+            //tmp.transform.GetChild(1).gameObject.SetActive(true);
         }
 
         for (int i = 0; i <= currentWord.Length - 1; i++)
@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
             tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentWord[i].ToString();
             tmp.transform.GetComponent<ClickDrag>().enabled = false;
             tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
-            tmp.transform.GetChild(1).gameObject.SetActive(true);
+            //tmp.transform.GetChild(1).gameObject.SetActive(true);
         }
 
         if (currentWord.Length < answerCharas.Length)
@@ -167,7 +167,32 @@ public class GameManager : MonoBehaviour
             tmp.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = " ";
             tmp.transform.GetComponent<ClickDrag>().enabled = false;
             tmp.transform.GetComponent<LetterPiece>().answerSpace = true;
-            tmp.transform.GetChild(1).gameObject.SetActive(true);
+            //tmp.transform.GetChild(1).gameObject.SetActive(true);
+        }
+
+        switch (answerCharas.Length)
+        {
+            case 0:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = 0;
+                break;
+            case 1:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = 0;
+                break;
+            case 2:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = -1176.4f;
+                break;
+            case 3:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = -867.2f;
+                break;
+            case 4:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = -737f;
+                break;
+            case 5:
+                workSpace.GetComponent<HorizontalLayoutGroup>().spacing = -449.6f;
+                break;
+            default:
+                Debug.Log("break");
+                break;
         }
 
         int rnd = UnityEngine.Random.Range(0, diff - 1);
@@ -177,8 +202,8 @@ public class GameManager : MonoBehaviour
         }
         for (int i = 0; i <= diff - 1; i++)
         {
-            if (i == rnd) { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentMix; }
-            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gameAlpha[UnityEngine.Random.Range(0, gameAlpha.Count - 1)]; }
+            if (i == rnd) { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentMix.ToLower(); }
+            else { mixSpace[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = gameAlpha[UnityEngine.Random.Range(0, gameAlpha.Count - 1)].ToLower(); }
             mixSpace[i].GetComponent<ClickDrag>().enabled = false;
             mixSpace[i].GetComponent<ClickDrag>().isDragging = false;
             mixSpace[i].GetComponent<ClickDrag>().canvasGroup.blocksRaycasts = true;
@@ -188,6 +213,8 @@ public class GameManager : MonoBehaviour
             mixSpace[i].SetActive(true);
         }
         PlayVoice();
+
+        GameObject.Find("txtLevel").GetComponent<TextMeshProUGUI>().text = answerWord;
     }
 
     public void LetterChanged()

@@ -51,7 +51,20 @@ public class WordTrails : MonoBehaviour
     "m a t",
     "m a d",
 };
-
+/*
+    [HideInInspector]
+    public string[] cvc1 = new string[]
+{
+    "c a t",
+    "c a t e",
+    "c a t",
+    "c a",
+    "b a",
+    "b a d",
+    "b a de",
+    "b a d e s",
+};
+*/
     [HideInInspector]
     public string[] cvc2 = new string[]
     {
@@ -88,7 +101,7 @@ public class WordTrails : MonoBehaviour
     "p o t",
     "g o t",
     "b o t",
-    "b o b",
+    "B o b",
     "j o b",
     "j o t",
     "l o t",
@@ -981,7 +994,7 @@ public class WordTrails : MonoBehaviour
     {
     "sh e",
     "sh e d",
-    "b ed",
+    "b e d",
     "b e ",
     "b e t",
     "m e t",
