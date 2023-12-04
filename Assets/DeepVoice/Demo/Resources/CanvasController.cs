@@ -28,8 +28,8 @@ namespace AiKodexDeepVoice
         AudioClip audioClip;
         bool action;
         List<string> options0 = new List<string>() { "Olivia", "Emma", "Amy", "Brian", "Arthur", "Kajal", "Aria", "Ayanda", "Salli", "Kimberly", "Kendra", "Joanna", "Ivy", "Ruth", "Kevin", "Matthew", "Justin", "Joey", "Stephen" };
-        List<string> options1 = new List<string>() { "Arthur","Hailey","Obama", "Biden", "Trump", "Queen", "Batman", "Andrew", "Anime_Girl","Valentina","Wayne","Jan","Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
-        List<string> options2 = new List<string>() { "Arthur","Hailey","Obama", "Biden", "Trump", "Queen", "Batman", "Andrew", "Anime_Girl","Valentina","Wayne","Jan","Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
+        List<string> options1 = new List<string>() { "Jessie","Harry","Glinda","Clyde","Freya","Fin","Dave","Charlotte","Callum","Arthur","Hailey", "Batman", "Andrew", "Anime_Girl","Valentina","Wayne","Jan","Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
+        List<string> options2 = new List<string>() { "Jessie","Harry","Glinda","Clyde","Freya","Fin","Dave","Charlotte","Callum","Arthur","Hailey", "Batman", "Andrew", "Anime_Girl","Valentina","Wayne","Jan","Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
         List<string> options3 = new List<string>() { "Lotte", "Maxim", "Salli", "Ola", "Geraint", "Miguel", "Giorgio", "Marlene", "Ines", "Zhiyu", "Zeina", "Karl", "Gwyneth", "Lucia", "Cristiano", "Astrid", "Vicki", "Mia", "Vitoria", "Bianca", "Chantal", "Raveena", "Russell", "Aditi", "Dora", "Enrique", "Hans", "Carmen", "Ewa", "Maja", "Nicole", "Filiz", "Camila", "Jacek", "Celine", "Ricardo", "Mads", "Mathieu", "Lea", "Tatyana", "Penelope", "Naja", "Ruben", "Takumi", "Mizuki", "Carla", "Conchita", "Jan", "Liv", "Lupe", "Seoyeon" };
         float scrubber;
         AudioSource audioSource;

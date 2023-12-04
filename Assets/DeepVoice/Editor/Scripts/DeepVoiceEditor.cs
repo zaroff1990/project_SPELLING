@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using UnityEditor.IMGUI.Controls;
 
 
 
@@ -29,9 +28,9 @@ namespace AiKodexDeepVoice
         public static Model model = Model.DeepVoice_Mono;
         public enum Voice
         {
-            Obama, Biden, Trump, Queen, Batman, Andrew, Hailey, Arthur , Anime_Girl, Valentina,Wayne,Jan, Noah, Lily, Ethan, Sophia, Olivia, Ruby, Lucas, John
+            Jessie, Harry, Glinda, Clyde, Callum, Charlotte, Dave, Fin, Freya, Batman, Andrew, Hailey, Arthur , Anime_Girl, Valentina,Wayne,Jan, Noah, Lily, Ethan, Sophia, Olivia, Ruby, Lucas, John
         };
-        public static Voice voice = Voice.Noah;
+        public static Voice voice = Voice.Jessie;
         public enum StandardVoice
         {
             Lotte, Maxim, Salli, Geraint, Miguel, Giorgio, Marlene, Ines, Zhiyu, Zeina, Karl, Gwyneth, Lucia, Cristiano, Astrid, Vicki, Mia, Vitoria, Bianca, Chantal, Raveena, Russell, Aditi, Dora, Enrique, Hans, Carmen, Ewa, Maja, Nicole, Filiz, Camila, Jacek, Celine, Ricardo, Mads, Mathieu, Lea, Tatyana, Penelope, Naja, Ruben, Takumi, Mizuki, Carla, Conchita, Jan, Liv, Lupe, Seoyeon
@@ -42,7 +41,7 @@ namespace AiKodexDeepVoice
             Olivia, Emma, Amy, Brian, Arthur, Kajal, Aria, Ayanda, Salli, Kimberly, Kendra, Joanna, Ivy, Ruth, Kevin, Matthew, Justin, Joey, Stephen
         }
         public static NeuralVoice neuralVoice = NeuralVoice.Olivia;
-        float variability = 0.2f, clarity = 0.7f;
+        float variability = 0.3f, clarity = 0.75f;
         private bool initDone = false;
         private GUIStyle StatesLabel, styleError;
         public static bool running = false;
@@ -79,7 +78,7 @@ namespace AiKodexDeepVoice
         int selGridNV = -1, selGridMV = -1, selGridSV = -1;
         int lastSelGridNV = -1, lastSelGridMV = -1, lastSelGridSV = -1;
         string[] previewNeuralVoicesString = { "Olivia", "Emma", "Amy", "Brian", "Arthur", "Kajal", "Aria", "Ayanda", "Salli", "Kimberly", "Kendra", "Joanna", "Ivy", "Ruth", "Kevin", "Matthew", "Justin", "Joey", "Stephen" };
-        string[] previewMonoMultiVoicesString = { "Obama", "Biden", "Trump", "Queen", "Batman", "Andrew","Hailey","Arthur", "Anime_Girl","Valentina","Wayne","Jan", "Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
+        string[] previewMonoMultiVoicesString = { "Jessie","Harry","Glinda","Clyde","Freya","Fin","Dave","Charlotte","Callum", "Batman", "Andrew","Hailey","Arthur", "Anime_Girl","Valentina","Wayne","Jan", "Noah", "Lily", "Ethan", "Sophia", "Olivia", "Ruby", "Lucas", "John" };
         string[] previewStandardVoicesString = { "Lotte", "Maxim", "Salli", "Geraint", "Miguel", "Giorgio", "Marlene", "Ines", "Zhiyu", "Zeina", "Karl", "Gwyneth", "Lucia", "Cristiano", "Astrid", "Vicki", "Mia", "Vitoria", "Bianca", "Chantal", "Raveena", "Russell", "Aditi", "Dora", "Enrique", "Hans", "Carmen", "Ewa", "Maja", "Nicole", "Filiz", "Camila", "Jacek", "Celine", "Ricardo", "Mads", "Mathieu", "Lea", "Tatyana", "Penelope", "Naja", "Ruben", "Takumi", "Mizuki", "Carla", "Conchita", "Jan", "Liv", "Lupe", "Seoyeon" };
 
 
@@ -152,13 +151,14 @@ namespace AiKodexDeepVoice
             Texture2D disabledWaveForm = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/DeepVoice/Editor/Resources/DisabledWaveform.png", typeof(Texture));
             EditorGUILayout.BeginVertical("Box");
             EditorGUILayout.LabelField("            DeepVoice   ", headStyle);
-            EditorGUILayout.LabelField("                Version 1.3", subStyle);
+            EditorGUILayout.LabelField("                Version 2.1.3", subStyle);
             EditorGUILayout.EndVertical();
             GUI.DrawTexture(new Rect(10, 3, 45, 45), logo, ScaleMode.StretchToFill, true, 10.0F);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space(5);
             GUILayout.BeginVertical("window");
             EditorGUILayout.LabelField("Voice Generator", sectionTitle);
+            var tempCenter = GUILayoutUtility.GetLastRect().center.x;
             EditorGUILayout.Space(10);
             invoice = EditorGUILayout.TextField(new GUIContent("Invoice Number  ", infoToolTip, "Enter Invoice number. Invoice numbers start with \"IN\" and are 14 characters long. You can find them under Order History on the store. For a more detailed explaination, please refer to the documentation."), invoice);
             GUILayout.FlexibleSpace();
@@ -179,11 +179,11 @@ namespace AiKodexDeepVoice
             EditorGUILayout.BeginHorizontal();
             style = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.UpperLeft, fontSize = 10 };
             if (model == Model.DeepVoice_Mono)
-                EditorGUILayout.LabelField($"Supports: EN", style, GUILayout.Width(100));
+                EditorGUILayout.LabelField($"Supports only English. Switch to Deep Voice_Multi for more langauges.", style, GUILayout.MaxWidth(500));
             else if (model == Model.DeepVoice_Multi)
-                EditorGUILayout.LabelField($"Supports: EN, DE, PL, ES, IT, FR, PT, HI", style, GUILayout.MaxWidth(250));
+                EditorGUILayout.LabelField($"Supports: EN, JA, DE, HI, FR, KO, PT, IT, ES, ID, NL, TR, FIL, PL, SV, BG, RO, AR, CS, EL, FI, HR, MS, SK, DA, TA, UK", style, GUILayout.MaxWidth(800));
             else
-                EditorGUILayout.LabelField($"Supports: EN", style, GUILayout.MaxWidth(250));
+                EditorGUILayout.LabelField($"Supports only English. Switch to Deep Voice_Multi for more langauges.", style, GUILayout.MaxWidth(550));
             style = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.UpperRight, fontSize = 10 };
             styleError = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.UpperRight, fontSize = 10 };
             styleError.normal.textColor = Color.red;
@@ -364,8 +364,8 @@ namespace AiKodexDeepVoice
 
             if (Selection.activeObject != null && Selection.activeObject.GetType().Equals(typeof(AudioClip)) && currentAudioClip != null)
             {
-                GUI.DrawTexture(new Rect(Screen.width * 0.04f, GUILayoutUtility.GetLastRect().y, Screen.width * 0.7f, 100), audioWaveForm, ScaleMode.StretchToFill, true, 1);
-                GUI.DrawTexture(new Rect(Screen.width * 0.04f, GUILayoutUtility.GetLastRect().y, Screen.width * 0.7f, 100), audioSlider, ScaleMode.StretchToFill, true, 1);
+                GUI.DrawTexture(new Rect(tempCenter-Screen.width * 0.3f, GUILayoutUtility.GetLastRect().y, Screen.width * 0.6f, 100), audioWaveForm, ScaleMode.StretchToFill, true, 1);
+                GUI.DrawTexture(new Rect(tempCenter-Screen.width * 0.3f, GUILayoutUtility.GetLastRect().y, Screen.width * 0.6f, 100), audioSlider, ScaleMode.StretchToFill, true, 1);
                 AudioClip sound = (AudioClip)Selection.activeObject;
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
@@ -430,7 +430,7 @@ namespace AiKodexDeepVoice
 
             else
             {
-                GUI.DrawTexture(new Rect(Screen.width * 0.147f, GUILayoutUtility.GetLastRect().y, Screen.width * 0.5f, 100), disabledWaveForm, ScaleMode.ScaleToFit, true, 1.5f);
+                GUI.DrawTexture(new Rect(tempCenter-100, GUILayoutUtility.GetLastRect().y, 200, 100), disabledWaveForm, ScaleMode.ScaleToFit, true, 1.5f);
                 EditorGUI.BeginDisabledGroup(true);
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
@@ -513,13 +513,13 @@ namespace AiKodexDeepVoice
                 if (previewClip != null)
                 {
                     float trimLastRectY = GUILayoutUtility.GetLastRect().y + 20;
-                    GUI.DrawTexture(new Rect(Screen.width * 0.04f, trimLastRectY, Screen.width * 0.7f, 100), previewClip, ScaleMode.StretchToFill, true, 1);
+                    GUI.DrawTexture(new Rect(tempCenter - Screen.width * 0.3f, trimLastRectY, Screen.width * 0.6f, 100), previewClip, ScaleMode.StretchToFill, true, 1);
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
-                    EditorGUILayout.MinMaxSlider(ref trimMin, ref trimMax, 0, 1, GUILayout.Width(Screen.width * 0.705f));
+                    EditorGUILayout.MinMaxSlider(ref trimMin, ref trimMax, 0, 1, GUILayout.MaxWidth(Screen.width * 0.705f));
                     GUILayout.FlexibleSpace();
-                    GUI.Box(new Rect(Screen.width * 0.04f, trimLastRectY, Screen.width * trimMin * 0.7f, 100), "");
-                    GUI.Box(new Rect(Screen.width * trimMax * 0.7f + Screen.width * 0.04f, trimLastRectY, Screen.width * 0.7f * (1 - trimMax), 100), "");
+                    GUI.Box(new Rect(Screen.width * 0.04f, trimLastRectY, Screen.width * trimMin * 0.6f, 100), "");
+                    GUI.Box(new Rect(Screen.width * trimMax * 0.6f + Screen.width * 0.04f, trimLastRectY, Screen.width * 0.6f * (1 - trimMax), 100), "");
                     GUILayout.EndHorizontal();
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
@@ -617,10 +617,10 @@ namespace AiKodexDeepVoice
                 }
                 else
                 {
-                    GUI.DrawTexture(new Rect(Screen.width * 0.147f, GUILayoutUtility.GetLastRect().y + 20, Screen.width * 0.5f, 100), disabledWaveForm, ScaleMode.ScaleToFit, true, 1.5f);
+                    GUI.DrawTexture(new Rect(tempCenter-Screen.width * 0.25f, GUILayoutUtility.GetLastRect().y + 20, Screen.width * 0.5f, 100), disabledWaveForm, ScaleMode.ScaleToFit, true, 1.5f);
                     GUILayout.BeginHorizontal();
                     GUILayout.FlexibleSpace();
-                    EditorGUILayout.MinMaxSlider(ref trimMin, ref trimMax, 0, 1, GUILayout.Width(Screen.width * 0.725f));
+                    EditorGUILayout.MinMaxSlider(ref trimMin, ref trimMax, 0, 1, GUILayout.MaxWidth(Screen.width * 0.725f));
                     GUILayout.FlexibleSpace();
                     GUILayout.EndHorizontal();
                     GUILayout.BeginHorizontal();
@@ -1218,13 +1218,21 @@ namespace AiKodexDeepVoice
             if (request.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log("There was an error in generating the voice. Please check your invoice/order number and try again or check the documentation for more information.");
+                if(request.responseCode == 400)
+                {
+                    Debug.Log("Error in text field: Please check your prompt for quotes (\"\") and line breaks at the end of the prompt. There could also be special formatting in your text. Please remove any special formatting by pasting as plain text in a notepad and then pasting the text here. Inclusion of any special formatting or illegal characters will result in an error such as this. For best results, please use a combination of letters, periods and commas and make sure there are no line breaks in between or at the end. If you must use quotes or line breaks, please prepend them with a backslash. Please do not press enter in the text field before clicking on generate.");
+                }
             }
             else
             {
+                if(request.responseCode == 400)
+                {
+                    Debug.Log("Error in text field: Please check your prompt for quotes (\"\") and line breaks at the end of the prompt. There could also be special formatting in your text. Please remove any special formatting by pasting as plain text in a notepad and then pasting the text here. Inclusion of any special formatting or illegal characters will result in an error such as this. For best results, please use a combination of letters, periods and commas and make sure there are no line breaks in between or at the end. If you must use quotes or line breaks, please prepend them with a backslash. Please do not press enter in the text field before clicking on generate.");
+                }
                 if (request.downloadHandler.text == "Invalid Response")
-                    Debug.Log("Invalid Invoice/Order Number. Please check your invoice/order number and try again");
+                    Debug.Log("Invalid Invoice/Order Number. Please check your invoice/order number and try again.");
                 else if(request.downloadHandler.text == "Limit Reached")
-                    Debug.Log("It seems that you may have reached the limit. To check your character usage, please click on the Status button. Please wait until the 15th or the 30th/31st of the month to get a renewed character count. Thank you for using DeepVoice.");
+                    Debug.Log("It seems that you may have reached the limit. To check your character usage, please click on the Status button. Please wait until 30th/31st of the month to get a renewed character count. Thank you for using DeepVoice.");
                 else
                 {
                     byte[] soundBytes = System.Convert.FromBase64String(request.downloadHandler.text);
@@ -1287,7 +1295,12 @@ namespace AiKodexDeepVoice
                 if (request.downloadHandler.text == "Not Verified")
                     Debug.Log("Invoice/Order number verification unsuccessful. Please check your invoice/order number and try again or contact the publisher on the email given in the documentation.");
                 else
+                {
+                    if(invoice.Length == 13)
+                        Debug.Log("Your order number is verified, however, please use your invoice number to access the voice generator. Your invoice number typically gets generated in 2-4 hours after your purchase. It will be listed beside your Order number. An invoice number looks like IN010X0XXXXXXX, a 14 digit number you can find on the \"My Orders\" page on the asset store page.");
+                    else
                     Debug.Log("Your invoice is verified. Thank you for choosing DeepVoice!");
+                }
             }
             request.Dispose();
         }
